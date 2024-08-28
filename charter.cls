@@ -206,7 +206,7 @@
   % codirector exists
   {
     \vspace{10px}
-    \normalsize Codirector:\\
+    \normalsize Codirectora:\\
     \Large \cosupname \hspace{1px} (\pertecosupname) \\
   }
 		
