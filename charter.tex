@@ -85,7 +85,9 @@ Buenos Aires, \fechaInicioName
 \vspace{2cm}
 
 Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y 
-consistirá en {el desarrollo de un sistema de control remoto de clima en invernaderos mediante sensores inalámbricos Bluetooth}. 
+consistirá en {desarrollar un prototipo preliminar de un sistema basado en sensores y actuadores inalámbricos, junto con tecnología en la nube y 
+la aplicación web, que permita el monitoreo y control remoto del clima en invernaderos}. 
+
 El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, 
 con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
@@ -97,8 +99,11 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & 
+\begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}\supname \\ Director del Trabajo Final\end{tabular} & \hspace{2cm} & 
+\begin{tabular}[c]{@{}c@{}}\cosupname \\ Codirectora del Trabajo Final \end{tabular} \vspace{2.5cm} \\ 
+%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 \end{tabular}
 \end{table}
 
@@ -108,126 +113,139 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. 
-	%En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+La agricultura enfrenta desafíos crecientes en la optimización de la productividad y la eficiencia, especialmente en regiones con condiciones 
+climáticas adversas y variables. Los sistemas de cultivo tradicionales suelen ser ineficientes en la gestión de recursos esenciales como agua, 
+nutrientes y energía, en gran parte debido a la falta de monitoreo en tiempo real, lo que afecta negativamente tanto la calidad como el rendimiento 
+de los cultivos. Además, los agricultores se enfrentan a altos costos operativos y a un impacto negativo en la sostenibilidad ambiental debido a 
+prácticas no optimizadas. Ante estas dificultades, los cultivos en invernaderos han surgido como una solución mejorada, permitiendo un mayor 
+control sobre las condiciones ambientales y una utilización más eficiente de los recursos.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Este trabajo se desarrolla en colaboración con Wentux, una empresa argentina que, desde 2018, se dedica al desarrollo de soluciones tecnológicas basadas en 
+IoT (\textit{Internet of Things}) para la gestión del clima en invernaderos. La iniciativa surge a partir del programa de vinculación con empresas del posgrado, 
+que busca fomentar la colaboración entre el sector académico y el ámbito empresarial. Wentux ofrece productos que permiten controlar de manera automatizada 
+el clima de los cultivos mediante el uso de sensores y actuadores.
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+Actualmente, los sistemas de Wentux están compuestos por un nodo central con conexión Wi-Fi y sensores y actuadores conectados de forma cableada, lo cual 
+limita la flexibilidad y escalabilidad de la solución. Los datos del sistema se visualizan a través de una página web integrada en el nodo central, 
+y el monitoreo y control se realizan únicamente de manera local.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+
+La propuesta, como puede observarse en la figura \ref{fig:diagBloques}, consiste en desarrollar una red de sensores y actuadores inalámbricos integrados en
+un ESP32-C3, que se conectan a un módulo central mediante tecnología Bluetooth 5.0. Este módulo, también basado en un ESP32-C3, se conecta a Internet vía Wi-Fi 
+y envía los datos a un servidor en la nube a través del protocolo MQTT (\textit{Message Queue Telemetry Transport}), lo que permitirá a los usuarios monitorear y 
+gestionar el sistema de manera remota desde una aplicación web del tipo SPA (\textit{Single Page Application}).
 
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
+	\centering 
+	\includegraphics[width=.5\textwidth]{./Figuras/figura1.png}
+	\caption{Diagrama en bloques del sistema.}
+	\label{fig:diagBloques}
 \end{figure}
+	
 
-\vspace{25px}
+Esta solución ofrece a los clientes finales un mayor control sobre sus cultivos, mejora la eficiencia en la gestión del clima y 
+optimiza los recursos, lo que se traduce en una mayor productividad y una reducción de los costos operativos.
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-\end{consigna}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
-
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
-\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+\begin{tabularx}{\linewidth}{|p{2.15cm}|p{5.8cm}|p{2.1cm}|p{4.1cm}|}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& Responsable técnico 	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+\multirow{2}{*}{Orientadores}    & \supname	      & \pertesupname 	& Director \\
+& \cosupname	      & \pertecosupname 	& Codirectora  \\ \hline
+Opositores    & \multicolumn{3}{l|}{Empresas que ya ofrecen soluciones similares en el mercado.} \\ \hline
+Usuario final & \multicolumn{3}{l|}{Potenciales clientes interesados en automatizar cultivos en invernaderos.} \\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Cliente: El señor \clientename\hspace{1px} tiene amplios conocimientos en desarrollo de sistemas embebidos y va a colaborar con la definición
+	de los requerimientos y el seguimiento del proyecto.
+	\item Orientadores: 
+	\begin{itemize}
+		\item El Director \supname\hspace{1px} es experto en la temática y ayudará con la definición de los protocolos y el desarrollo del proyecto.
+		\item La Codirectora \cosupname , experta en Sistemas de Información, ayudará con el seguimiento metodológico, 
+		 para garantizar una gestión rigurosa y efectiva del desarrollo del trabajo.
+		\end{itemize}
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+Diseñar y desarrollar un prototipo preliminar de un sistema basado en sensores y actuadores inalámbricos, junto con tecnología en la nube y la aplicación web, 
+que permita el monitoreo y control remoto del clima en invernaderos. El proyecto busca proporcionar a los agricultores un mayor control sobre las condiciones 
+ambientales, optimizar el uso de recursos, reducir los costos operativos y contribuir a una mayor sostenibilidad ambiental.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
-El proyecto incluye:
+El presemte trabajo incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
+	\item Implementación del protocolo de comunicación Bluetooth 5.0.
 		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
+		\item Desarrollo del protocolo de comunicación para asegurar la conexión entre los sensores y el nodo central mediante Bluetooth 5.0.
 		\end{itemize}
-	\item ...
-	
+	\item Diseño e implementación de la conexión WiFi en el nodo central.
+		\begin{itemize}
+		\item Configuración de la conectividad WiFi del nodo central para el envío de datos a través de Internet.
+		\end{itemize}
+	\item Desarrollo del software del microcontrolador.
+		\begin{itemize}
+		 \item Programación del microcontrolador de los sensores y actuadores para la recopilación y transmisión de datos.
+		 \item Programación del microcontrolador del nodo central para gestionar la comunicación con los sensores y el servidor IoT.
+		\end{itemize}
+	\item Implementación del broker MQTT en el servidor IoT.
+		\begin{itemize}
+		 \item Configuración del broker MQTT en el servidor para garantizar la comunicación entre el nodo central y el servidor IoT.
+		\end{itemize}
+	\item Implementación de cifrados de conexión mediante TLS (\textit{Transport Layer Security}).
+		\begin{itemize}
+		 \item Integración de protocolos de cifrado TLS para asegurar la comunicación entre los sensores, el nodo central y el servidor.
+	    \end{itemize}
+	\item Envío de información al servidor utilizando MQTT.
+		\begin{itemize}
+		 \item Configuración del nodo central para enviar los datos recolectados al servidor IoT mediante el protocolo MQTT.
+	   	\end{itemize}
+	\item Diseño y desarrollo de una API (\textit{Application Programming Interface}) REST (\textit{Representational State Transfer}).
+		\begin{itemize}
+		 \item Creación de una API REST que permita la comunicación con el sistema utilizando HTTP, MQTT y WebSockets.
+	   	\end{itemize}
+	\item Diseño e implementación de la base de datos.
+		\begin{itemize}
+		 \item Desarrollo de una base de datos para almacenar los datos recolectados por los sensores y permitir su consulta y análisis.
+	   	\end{itemize}
+	\item Desarrollo de una aplicación Web SPA.
+		\begin{itemize}
+		 \item Integración 
+	   	\end{itemize}
+	\item Documentación y manuales de usuario.
+		\begin{itemize}
+		 \item Creación de instrucciones detalladas para el uso del sistema, incluyendo guías de instalación, configuración y operación.
+	   	\end{itemize}
+	\item Entrega del código del sistema.
+		\begin{itemize}
+		 \item Desarrollo y entrega del código fuente del sistema, incluyendo todos los componentes desarrollados (sensores, nodo central, servidor, y aplicación web).
+	   	\end{itemize}
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presemte trabajo incluye:
+\begin{itemize}
+	\item Diseño de un gabinete para el microcontrolador y los sensores a utilizar.
+	\item Integración con servicios en la nube de terceros.
+	\item Desarrollo de una aplicación móvil compatible con iOS y Android.
+\end{itemize}
 
-\end{consigna}
 
 
 \section{5. Supuestos del proyecto}
