@@ -85,8 +85,8 @@ Buenos Aires, \fechaInicioName
 \vspace{2cm}
 
 Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y 
-consistirá en {desarrollar un prototipo preliminar de un sistema basado en sensores y actuadores inalámbricos, junto con tecnología en la nube y 
-la aplicación web, que permita el monitoreo y control remoto del clima en invernaderos}. 
+consistirá en {desarrollar un prototipo preliminar de un sistema basado en sensores y actuadores inalámbricos, junto con un servidor en la nube y 
+una aplicación web, que permita el monitoreo y control remoto del clima en invernaderos}. 
 
 El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, 
 con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
@@ -134,7 +134,7 @@ y el monitoreo y control se realizan únicamente de manera local.
 
 La propuesta, como puede observarse en la figura \ref{fig:diagBloques}, consiste en desarrollar una red de sensores y actuadores inalámbricos integrados en
 un ESP32-C3, que se conectan a un módulo central mediante tecnología Bluetooth 5.0. Este módulo, también basado en un ESP32-C3, se conecta a Internet vía Wi-Fi 
-y envía los datos a un servidor en la nube a través del protocolo MQTT (\textit{Message Queue Telemetry Transport}), lo que permitirá a los usuarios monitorear y 
+y envía los datos a un servidor IoT a través del protocolo MQTT (\textit{Message Queue Telemetry Transport}), lo que permitirá a los usuarios monitorear y 
 gestionar el sistema de manera remota desde una aplicación web del tipo SPA (\textit{Single Page Application}).
 
 \begin{figure}[htpb]
@@ -174,8 +174,8 @@ Usuario final & \multicolumn{3}{l|}{Potenciales clientes interesados en automati
 	\item Orientadores: 
 	\begin{itemize}
 		\item El Director \supname\hspace{1px} es experto en la temática y ayudará con la definición de los protocolos y el desarrollo del proyecto.
-		\item La Codirectora \cosupname , experta en Sistemas de Información, ayudará con el seguimiento metodológico, 
-		 para garantizar una gestión rigurosa y efectiva del desarrollo del trabajo.
+		\item La Codirectora \cosupname , experta en Sistemas de Información, ayudará con el seguimiento metodológico, para garantizar una gestión 
+		rigurosa y efectiva del desarrollo del trabajo.
 		\end{itemize}
 \end{itemize}
 
@@ -183,9 +183,9 @@ Usuario final & \multicolumn{3}{l|}{Potenciales clientes interesados en automati
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-Diseñar y desarrollar un prototipo preliminar de un sistema basado en sensores y actuadores inalámbricos, junto con tecnología en la nube y la aplicación web, 
-que permita el monitoreo y control remoto del clima en invernaderos. El proyecto busca proporcionar a los agricultores un mayor control sobre las condiciones 
-ambientales, optimizar el uso de recursos, reducir los costos operativos y contribuir a una mayor sostenibilidad ambiental.
+Diseñar y desarrollar un prototipo preliminar de un sistema basado en sensores y actuadores inalámbricos, junto con un servidor IoT y una aplicación  
+web, que permita el monitoreo y control remoto del clima en invernaderos. El proyecto busca proporcionar a los agricultores un mayor control sobre  
+las condiciones  ambientales, optimizar el uso de recursos, reducir los costos operativos y contribuir a una mayor sostenibilidad ambiental.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -198,7 +198,7 @@ El presemte trabajo incluye:
 		\end{itemize}
 	\item Diseño e implementación de la conexión WiFi en el nodo central.
 		\begin{itemize}
-		\item Configuración de la conectividad WiFi del nodo central para el envío de datos a través de Internet.
+		\item Configuración de la conectividad WiFi del nodo central para el envío de datos a través de la red.
 		\end{itemize}
 	\item Desarrollo del software del microcontrolador.
 		\begin{itemize}
@@ -207,23 +207,23 @@ El presemte trabajo incluye:
 		\end{itemize}
 	\item Implementación del broker MQTT en el servidor IoT.
 		\begin{itemize}
-		 \item Configuración del broker MQTT en el servidor para garantizar la comunicación entre el nodo central y el servidor IoT.
+		 \item Configuración del broker MQTT para garantizar la comunicación entre el nodo central y el servidor IoT.
 		\end{itemize}
 	\item Implementación de cifrados de conexión mediante TLS (\textit{Transport Layer Security}).
 		\begin{itemize}
 		 \item Integración de protocolos de cifrado TLS para asegurar la comunicación entre los sensores, el nodo central y el servidor.
 	    \end{itemize}
-	\item Envío de información al servidor utilizando MQTT.
+	\item Envío de información al servidor IoT utilizando MQTT.
 		\begin{itemize}
 		 \item Configuración del nodo central para enviar los datos recolectados al servidor IoT mediante el protocolo MQTT.
 	   	\end{itemize}
+	\item Diseño e implementación de la base de datos.
+	   \begin{itemize}
+		\item Desarrollo de una base de datos para almacenar los datos recolectados por los sensores y permitir su consulta y análisis.
+			\end{itemize}
 	\item Diseño y desarrollo de una API (\textit{Application Programming Interface}) REST (\textit{Representational State Transfer}).
 		\begin{itemize}
-		 \item Creación de una API REST que permita la comunicación con el sistema utilizando HTTP, MQTT y WebSockets.
-	   	\end{itemize}
-	\item Diseño e implementación de la base de datos.
-		\begin{itemize}
-		 \item Desarrollo de una base de datos para almacenar los datos recolectados por los sensores y permitir su consulta y análisis.
+		 \item Creación de una API REST que permita la comunicación con el sistema utilizando HTTP (\textit{Hypertext Transfer Protocol}), MQTT y WebSockets.
 	   	\end{itemize}
 	\item Desarrollo de una aplicación Web SPA.
 		\begin{itemize}
@@ -235,11 +235,12 @@ El presemte trabajo incluye:
 	   	\end{itemize}
 	\item Entrega del código del sistema.
 		\begin{itemize}
-		 \item Desarrollo y entrega del código fuente del sistema, incluyendo todos los componentes desarrollados (sensores, nodo central, servidor, y aplicación web).
+		 \item Desarrollo y entrega del código fuente del sistema, incluyendo todos los componentes desarrollados (sensores, nodo central, servidor 
+		 y aplicación web).
 	   	\end{itemize}
 \end{itemize}
 
-El presemte trabajo incluye:
+El presemte trabajo no incluye:
 \begin{itemize}
 	\item Diseño de un gabinete para el microcontrolador y los sensores a utilizar.
 	\item Integración con servicios en la nube de terceros.
@@ -251,17 +252,14 @@ El presemte trabajo incluye:
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Se contará con los materiales necesarios para la implementación de los nodos de sensores y actuadores, como así también del nodo central.
+	\item Se dispondrá del conocimiento necesario para la implementación del protocolo de cifrado TLS y el software necesario en los microcontroladores.
+	\item Se dispondrá del conocimiento necesario para el diseño y desarrollo de la base de datos, API y aplicación web.
+	\item Se podrá terminar el presente proyecto en el tiempo estipulado.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
