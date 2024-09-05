@@ -10,28 +10,20 @@ estas dificultades, los cultivos en invernaderos han surgido como una solución
 mejorada, permitiendo un mayor control sobre las condiciones ambientales y una
 utilización más eficiente de los recursos.
 
-Este trabajo se desarrolla en colaboración con Wentux, una empresa argentina
-que, desde 2018, se dedica al desarrollo de soluciones tecnológicas basadas en
-IoT (\textit{Internet of Things}) para la gestión del clima en invernaderos. La
-iniciativa surge a partir del programa de vinculación con empresas del
-posgrado, que busca fomentar la colaboración entre el sector académico y el
-ámbito empresarial. Wentux ofrece productos que permiten controlar de manera
-automatizada el clima de los cultivos mediante el uso de sensores y actuadores.
-
-Actualmente, los sistemas de Wentux están compuestos por un nodo central con
-conexión Wi-Fi y sensores y actuadores conectados de forma cableada, lo cual
-limita la flexibilidad y escalabilidad de la solución. Los datos del sistema se
-visualizan a través de una página web integrada en el nodo central, y el
-monitoreo y control se realizan únicamente de manera local.
+El presente trabajo se desarrollará en la Facultad de Ciencias Forestales 
+(FCF) de la Universidad Nacional de Misiones (UNaM) que posee diversos sistemas de cultivos hidropónicos.
+En la actualidad, se utilizan sistemas de control programables con temporizadores que 
+operan sin tener en cuenta las variables ambientales, lo que implica que la intervención 
+humana debe ser continua y la medición de variables se realiza de forma manual. Esta falta 
+de monitoreo en tiempo real y la capacidad limitada para predecir problemas afectan negativamente 
+la calidad y el rendimiento de los cultivos. Además, esto conlleva altos costos operativos y un 
+impacto negativo en la sostenibilidad ambiental debido a prácticas no optimizadas.
 
 La propuesta, como puede observarse en la figura \ref{fig:diagBloques},
-consiste en desarrollar una red Mesh (malla) de sensores y actuadores
-inalámbricos basados en el ESP32-C3, que se conectan a un módulo central
-mediante tecnología BLE (\textit{Bluetooth Low Energy}). Este módulo, también
-basado en un ESP32-C3, se conecta a Internet vía Wi-Fi y envía los datos a un
-servidor IoT a través del protocolo MQTT (\textit{Message Queue Telemetry
-	Transport}). Esto permitirá monitorear y gestionar el sistema de manera remota
-desde una aplicación web del tipo SPA (\textit{Single Page Application}).
+consiste en desarrollar un conjunto de sensores y actuadores  basados en el microcontrolador ESP32, 
+que se conectan a un servidor IoT vía Wi-Fi y envía los datos a través del protocolo MQTT 
+(\textit{Message Queue Telemetry Transport}). Esto permitirá monitorear y gestionar el sistema 
+de manera remota desde una aplicación web del tipo SPA (\textit{Single Page Application}).
 
 \begin{figure}[htpb]
 	\centering
@@ -40,7 +32,5 @@ desde una aplicación web del tipo SPA (\textit{Single Page Application}).
 	\label{fig:diagBloques}
 \end{figure}
 
-Esta solución ofrece a los clientes finales un mayor control sobre sus
-cultivos, mejora la eficiencia en la gestión del clima y optimiza los recursos,
-lo que se traduce en una mayor productividad y una reducción de los costos
-operativos.
+Esta solución ofrece un mayor control sobre sus cultivos, mejora la eficiencia en la gestión del clima y 
+optimiza los recursos, lo que se traduce en una mayor productividad y una reducción de los costos operativos.

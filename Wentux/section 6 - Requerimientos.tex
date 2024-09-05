@@ -1,0 +1,146 @@
+\begin{enumerate}
+	\item Requerimientos de los nodos sensores:
+	      \begin{enumerate}
+		      \item Cada nodo deberá contar con un microcontrolador ESP32-C3.
+		      \item Cada nodo deberá conectarse a una red Mesh sobre Bluetooth LE (Bluetooth 5).
+		      \item Cada nodo deberá tener un identificador único dentro del sistema.
+		      \item Cada nodo deberá permitir configurar el tiempo de manera remota para enviar los
+		            datos recolectados.
+		      \item Cada nodo, según corresponda, deberá enviar al nodo central:
+		            \begin{enumerate}
+			            \item la temperatura del ambiente y humedad relativa,
+			            \item el nivel de dióxido de carbono,
+			            \item el nivel de pH y
+			            \item y el nivel de CE.
+		            \end{enumerate}
+	      \end{enumerate}
+
+	\item Requerimientos del nodo actuador:
+	      \begin{enumerate}
+		      \item Deberá contar con un microcontrolador ESP32-C3.
+		      \item Deberá conectarse a una red Mesh sobre Bluetooth LE (Bluetooth 5).
+		      \item Deberá tener un identificador único dentro del sistema.
+		      \item Deberá contar con cuatro canales.
+		      \item Deberá enviar al nodo central el estado de cada canal.
+		      \item Deberá permitir activar cada canal de manera remota.
+	      \end{enumerate}
+
+	\item Requerimientos del nodo central:
+	      \begin{enumerate}
+		      \item Deberá contar con dos microcontroladores ESP32-C3.
+		            \begin{enumerate}
+			            \item Gateway de Red Mesh BLE
+			            \item Servidor Web y conexión WiFi
+		            \end{enumerate}
+		      \item La comunicación entre ambos microcontroladores deberá ser realizada por UART.
+		      \item Deberá procesar la información recibida de los nodos sensores y el nodo
+		            actuador.
+		      \item Deberá enviar configuraciones y acciones a los nodos sensores y el nodo
+		            actuador.
+	      \end{enumerate}
+
+	      \pagebreak
+
+	\item Requerimientos asociados al Gateway de Red Mesh BLE:
+	      \begin{enumerate}
+		      \item Deberá conectarse a una red Mesh sobre BLE y actuar como gateway de la red.
+		      \item Deberá recibir los datos de los nodos sensores y del nodo actuador.
+		      \item Deberá procesar y enviar la información al Servidor Web y conexión WiFi
+		            mediante UART.
+		      \item Deberá gestionar los identificadores únicos de cada nodo de la red Mesh BLE.
+	      \end{enumerate}
+
+	\item Requerimientos asociados al Servidor Web y conexión WiFi:
+	      \begin{enumerate}
+		      \item Deberá poder conectarse a una red WiFi disponible.
+		      \item Deberá poseer una página web embebida para monitoreo y configuración del
+		            sistema de manera local.
+		      \item Deberá recibir la información del Gateway de Red Mesh BLE mediante UART.
+		      \item Deberá enviar parámetros y acciones a los nodos sensores y actuadores a través
+		            del Gateway de Red Mesh BLE mediante UART.
+		      \item Deberá enviar los datos al servidor IoT a través del protocolo MQTT.
+		      \item Deberá implementar TLS para garantizar la seguridad en la comunicación.
+	      \end{enumerate}
+
+	      %\item Requerimientos del servidor IoT, que deberá contar con lo siguiente:
+	      %      \begin{enumerate}
+	      %	      \item Broker MQTT
+	      %	      \item Frontend
+	      %	      \item Backend
+	      %	      \item API
+	      %      \end{enumerate}
+
+	\item Requerimientos asociados al Broker MQTT:
+	      \begin{enumerate}
+		      \item Deberá contar con un broker MQTT que soporte conexiones seguras mediante TLS.
+		      \item Deberá gestionar las suscripciones y publicaciones de los datos enviados desde
+		            el nodo central y permitir la comunicación bidireccional para el envío de
+		            comandos.
+		      \item Deberá implementar QoS (\textit{Quality of Service}) para garantizar la entrega
+		            de los mensajes.
+	      \end{enumerate}
+
+	\item Requerimientos asociados al Frontend:
+	      \begin{enumerate}
+		      \item La interfaz deberá ser intuitiva y accesible desde dispositivos móviles y de
+		            escritorio.
+		      \item Deberá permitir el acceso al sistema a usuarios debidamente autenticados.
+		      \item Deberá permitir realizar el CRUD (\textit{Create, Read, Update and Delete}) de
+		            ambientes.
+		      \item Deberá permitir realizar el CRUD de sensores asociados a un determinado
+		            ambiente.
+		      \item Deberá permitir realizar el CRUD de actuadores asociados a un determinado
+		            ambiente.
+		      \item Deberá permitir visualizar en tiempo real los datos recibidos de los nodos
+		            sensores.
+		      \item Deberá permitir enviar comandos y configuraciones a los nodos sensores y
+		            actuadores.
+		      \item Deberá permitir visualizar los datos históricos de los sensores y actuadores.
+	      \end{enumerate}
+
+	\item Requerimientos asociados al Backend y la API:
+	      \begin{enumerate}
+		      \item Deberá permitir conexiones seguras mediante TLS.
+		      \item Deberá soportar los métodos HTTP para realizar operaciones CRUD y visualizar los reportes, WebSockets
+		            para la visualización en tiempo real de los datos y MQTT para la interacción con
+		            los dispositivos IoT.
+			  \item Deberá poder persistir la información de los usuarios.
+			  \item Deberá poder persistir la información de los ambientes.
+			  \item Deberá poder persistir la información de los sensores.
+			  \item Deberá poder persistir la información de los actuadores.
+			  \item Deberá poder persistir la información histórica de las mediciones de los sensores.
+			  \item Deberá poder persistir la información histórica de los estados de los actuadores.
+			  \item Deberá poder persistir la información histórica de los parámetros enviados a los sensores.
+			  \item Deberá poder persistir la información histórica de los parámetros enviados a los actuadores.
+		      \item Deberá permitir la autenticación y autorización de usuarios autorizados para
+		            acceder a los recursos.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de usuarios para el
+		            acceso seguro al sistema.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de ambientes.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de sensores
+		            asociados a un determinado ambiente, con la configuración de sus parámetros
+		            específicos.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de actuadores
+		            asociados a un determinado ambiente, con la configuración de sus parámetros
+		            específicos por canales.
+		      \item Deberá incluir el endpoint para registrar las mediciones de los sensores.
+		      \item Deberá incluir el endpoint para registrar los estados de los actuadores.
+		      \item Deberá incluir el endpoint para obtener el histórico de las mediciones de los
+		            sensores.
+		      \item Deberá incluir el endpoint para obtener el histórico de los estados de los
+		            actuadores.
+		      \item Deberá incluir un endpoint para el envío de parámetros a los sensores.
+		      \item Deberá incluir un endpoint para el envío de parámetros a los actuadores.
+
+	      \end{enumerate}
+
+	\item Requerimientos de documentación:
+	      \begin{enumerate}
+		      \item Se entregará el código del sistema, que incluye todos los componentes
+		            desarrollados (sensores, nodo central, Broker MQTT, Frontend, Backend y API).
+		      \item Se entregarán las guías de instalación, configuración y operación.
+		      \item Se desarrollará un informe de avance al finalizar el Taller de Trabajo Final A.
+		      \item Se desarrollará la memoria del proyecto al finalizar el Taller de Trabajo Final
+		            B.
+	      \end{enumerate}
+\end{enumerate}

@@ -1,0 +1,53 @@
+El presente trabajo incluye:
+\begin{itemize}
+	\item Análisis e investigación de ESP-BLE-MESH para microcontroladores ESP32-C3.
+	\item Implementación del protocolo ESP-BLE-MESH entre los nodos sensores, actuadores
+	      y el nodo central.
+	\item Diseño e implementación de la conexión WiFi en el nodo central.
+	\item Desarrollo del firmware de los nodos que serán alimentados con fuente 12vcc.
+	      \begin{itemize}
+		      \item Programación del firmware de los siguentes nodos sensores para la recopilación
+		            y transmisión de datos.
+		            \begin{itemize}
+			            \item Nodo sensor de temperatura ambiente y humedad relativa.
+			            \item Nodo sensor de dióxido de carbono ($CO_2$).
+			            \item Nodo sensor de potencial de hidrógeno (pH).
+			            \item Nodo sensor de conductividad eléctrica (CE).
+		            \end{itemize}
+		      \item Programación del firmware del nodo actuador de cuatro salidas para gestionar el
+		            control de dispositivos y reportar su estado.
+		      \item Programación del firmware del nodo central para gestionar la comunicación con
+		            los nodos sensores, actuadores y el servidor IoT.
+		            \begin{itemize}
+			            \item Programación del firmware del ESP32-C3 que actúa como nodo central en la
+			                  topología mesh mediante Bluetooth (ESP-BLE-MESH).
+			            \item Programación del firmware del ESP32-C3 que opera el servidor web y gestiona la
+			                  comunicación con el servidor IoT mediante WiFi.
+			            \item Programación del firmware para la comunicación entre los dos ESP32-C3 mediante
+			                  UART (\textit{Universal Asynchronous Receiver-Transmitter}).
+		            \end{itemize}
+	      \end{itemize}
+	\item Implementación del broker MQTT en el servidor IoT.
+	\item Implementación de cifrados de conexión mediante TLS (\textit{Transport Layer
+		      Security}).
+	\item Configuración del nodo central para enviar los datos recolectados al servidor
+	      IoT mediante el protocolo MQTT.
+	\item Diseño e implementación de una base de datos para almacenar los datos
+	      recolectados por los sensores y permitir su consulta y análisis.
+	\item Diseño y desarrollo de una API (\textit{Application Programming Interface})
+	      REST (\textit{Representational State Transfer}) que permita la comunicación con
+	      el sistema utilizando HTTP (\textit{Hypertext Transfer Protocol}), MQTT y
+	      WebSockets.
+	\item Desarrollo de una aplicación Web SPA.
+	\item Entrega del código del sistema, que incluye todos los componentes desarrollados
+	      (sensores, nodo central, servidor y aplicación web), guías de instalación,
+	      configuración y operación.
+\end{itemize}
+
+El presente trabajo no incluye:
+\begin{itemize}
+	\item Diseño de los gabinetes para los nodos sensores, actuadores y nodo central a
+	      utilizar.
+	\item Desarrollo de una aplicación móvil compatible con iOS y Android.
+	\item Desarrollo de módulos para alimentación con baterías.
+\end{itemize}
