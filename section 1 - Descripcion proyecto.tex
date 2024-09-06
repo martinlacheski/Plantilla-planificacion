@@ -6,22 +6,22 @@ energía, en gran parte debido a la falta de monitoreo en tiempo real, lo que
 afecta negativamente tanto la calidad como el rendimiento de los cultivos.
 Además, los agricultores se enfrentan a altos costos operativos y a un impacto
 negativo en la sostenibilidad ambiental debido a prácticas no optimizadas. Ante
-estas dificultades, los cultivos en invernaderos han surgido como una solución
-mejorada, permitiendo un mayor control sobre las condiciones ambientales y una
-utilización más eficiente de los recursos.
+estas dificultades, los cultivos hidropónicos han surgido como una solución
+mejorada, permitiendo una utilización más eficiente de los recursos.
 
-El presente trabajo se desarrollará en la Facultad de Ciencias Forestales 
-(FCF) de la Universidad Nacional de Misiones (UNaM) que posee diversos sistemas de cultivos hidropónicos.
-En la actualidad, se utilizan sistemas de control programables con temporizadores que 
+El presente trabajo se desarrollará en la Facultad de Ciencias Forestales (FCF) de la 
+Universidad Nacional de Misiones (UNaM) que posee diversos sistemas de cultivos hidropónicos.
+En la actualidad, estos sistemas de cultivo utilizan sistemas de control con temporizadores que 
 operan sin tener en cuenta las variables ambientales, lo que implica que la intervención 
-humana debe ser continua y la medición de variables se realiza de forma manual. Esta falta 
-de monitoreo en tiempo real y la capacidad limitada para predecir problemas afectan negativamente 
-la calidad y el rendimiento de los cultivos. Además, esto conlleva altos costos operativos y un 
-impacto negativo en la sostenibilidad ambiental debido a prácticas no optimizadas.
+humana debe ser continua y las mediciones de temperatura, potencial de Hidrógeno (pH) y
+conductividad eléctrica (CE) de la solución nutritiva se realiza de forma manual. Esta falta 
+de monitoreo en tiempo real afecta negativamente la calidad y el rendimiento de los cultivos. 
+Además, esto conlleva a altos costos operativos y un impacto negativo en la sostenibilidad  
+ambiental debido a prácticas no optimizadas.
 
-La propuesta, como puede observarse en la figura \ref{fig:diagBloques},
-consiste en desarrollar un conjunto de sensores y actuadores  basados en el microcontrolador ESP32, 
-que se conectan a un servidor IoT vía Wi-Fi y envía los datos a través del protocolo MQTT 
+La propuesta, como puede observarse en la figura \ref{fig:diagBloques}, consiste
+en desarrollar un conjunto de sensores y actuadores  basados en el microcontrolador ESP32, 
+que se conectan a un servidor IoT en la nube vía Wi-Fi y envía los datos a través del protocolo MQTT 
 (\textit{Message Queue Telemetry Transport}). Esto permitirá monitorear y gestionar el sistema 
 de manera remota desde una aplicación web del tipo SPA (\textit{Single Page Application}).
 
@@ -32,5 +32,5 @@ de manera remota desde una aplicación web del tipo SPA (\textit{Single Page App
 	\label{fig:diagBloques}
 \end{figure}
 
-Esta solución ofrece un mayor control sobre sus cultivos, mejora la eficiencia en la gestión del clima y 
+Esta solución ofrece un mayor control sobre los cultivos, mejora la eficiencia en la gestión del clima y 
 optimiza los recursos, lo que se traduce en una mayor productividad y una reducción de los costos operativos.

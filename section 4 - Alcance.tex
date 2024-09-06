@@ -1,15 +1,15 @@
 El presente trabajo incluye:
 \begin{itemize}
 	\item Diseño e implementación de la conexión WiFi en los nodos.
-	\item Desarrollo del firmware de los nodos que serán alimentados con fuente 5vcc.
+	\item Desarrollo del firmware de los nodos.
 	      \begin{itemize}
 		      \item Programación del firmware de los siguentes nodos sensores para la recopilación
 		            y transmisión de datos.
 		            \begin{itemize}
 			            \item Nodo sensor de temperatura ambiente, humedad relativa, presión atmosférica y nivel de luminosidad en el invernadero.
 			            \item Nodo sensor de dióxido de carbono ($CO_2$).
-			            \item Nodo sensor de potencial de Hidrógeno (pH), Conductividad Eléctrica (CE) y Total de Sólidos Disueltos (TDS).
-			            \item Nodo sensor ultrasónico para el medir el nivel y temperatura de la solución nutritiva.
+			            \item Nodo sensor de pH, CE y Total de Sólidos Disueltos (TDS).
+			            \item Nodo sensor de nivel y temperatura de la solución nutritiva.
 			            \item Nodo sensor de consumo de agua, nutrientes y energía eléctrica.
 		            \end{itemize}
 		      \item Programación del firmware del nodo actuador de cuatro salidas para gestionar el
@@ -21,14 +21,13 @@ El presente trabajo incluye:
 	\item Diseño e implementación de una base de datos para almacenar los datos recolectados por los sensores y permitir su consulta y análisis.
 	\item Diseño y desarrollo de una API (\textit{Application Programming Interface}) REST (\textit{Representational State Transfer}) que permita 
 		  la comunicación con el sistema utilizando HTTP (\textit{Hypertext Transfer Protocol}), MQTT y WebSockets.
-	\item Desarrollo de una aplicación Web SPA.
-	\item Entrega del código del sistema, que incluye todos los componentes desarrollados (sensores, actuador, servidor y aplicación web), guías de instalación,
+	\item Desarrollo de una aplicación Web del tipo SPA.
+	\item Entrega del código del sistema, que incluye todos los componentes desarrollados (sensores, actuadores, servidor y aplicación web), guías de instalación,
 	      configuración y operación.
 \end{itemize}
 
 El presente trabajo no incluye:
 \begin{itemize}
-	\item Armado de PCB, se va a utilizar protoboard y cables para conectar los microcontroladores con los sensores.
+	\item Armado de PCB, se va a utilizar gabinetes estancos, protoboard y cables para conectar los microcontroladores con los sensores y actuadores.
 	\item Desarrollo de una aplicación móvil compatible con iOS y Android.
-	\item Desarrollo de módulos para alimentación con baterías.
 \end{itemize}

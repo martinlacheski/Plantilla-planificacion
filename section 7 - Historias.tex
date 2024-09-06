@@ -1,13 +1,9 @@
-Para definir las historias de usuario y estimar su dificultad, complejidad y
-riesgo, es necesario primero descomponer los requerimientos en historias de
-usuario específicas. A cada historia se le asignan puntos de acuerdo con la
-serie de Fibonacci (1, 2, 3, 5, 8, 13, 21, etc.), que representan los niveles
+Para definir las historias de usuario y estimar su dificultad, complejidad y riesgo, es necesario primero descomponer los requerimientos en historias de
+usuario específicas. A cada historia se le asignan puntos de acuerdo con la serie de Fibonacci (1, 2, 3, 5, 8, 13, 21, 34, etc.), que representan los niveles
 de dificultad, complejidad y riesgo.
 
-El puntaje total de cada historia de usuario se calcula con la suma de los
-valores asignados a estos tres criterios, y luego se asigna el número de la
-secuencia de Fibonacci más cercano que sea mayor o igual a la suma obtenida.
-Para asignar ponderación a los (\textit{history points}) se han asignado los
+El puntaje total de cada historia de usuario se calcula con la suma de los valores asignados a estos tres criterios, y luego se asigna el número de la
+secuencia de Fibonacci más cercano que sea mayor o igual a la suma obtenida. Para asignar ponderación a los (\textit{history points}) se han asignado los
 siguientes pesos:
 
 \underline{Dificultad del trabajo a realizar}
@@ -20,8 +16,8 @@ siguientes pesos:
 \underline{Complejidad del trabajo a realizar}
 \begin{itemize}
 	\item \textbf{Baja:} Peso \textrightarrow{ 1}.
-	\item \textbf{Media:} Peso \textrightarrow{ 3}.
-	\item \textbf{Alta:} Peso \textrightarrow{ 5}.
+	\item \textbf{Media:} Peso \textrightarrow{ 5}.
+	\item \textbf{Alta:} Peso \textrightarrow{ 13}.
 \end{itemize}
 
 \underline{Riesgo del trabajo a realizar}
@@ -39,54 +35,54 @@ siguientes pesos:
 	      \begin{itemize}
 		      \item \textbf{Dificultad:} Alta (5) \textrightarrow{ Porque implica múltiples integraciones y la configuración de varios dispositivos para que
 			            funcionen en conjunto de manera sincronizada}.
-		      \item \textbf{Complejidad:} Alta (5) \textrightarrow{ Porque la integración de todas las tecnologías podría presentar desafíos técnicos}.
+		      \item \textbf{Complejidad:} Alta (13) \textrightarrow{ Porque la integración de todas las tecnologías podría presentar desafíos técnicos}.
 		      \item \textbf{Riesgo:} Alta (5) \textrightarrow{ Porque existe incertidumbre sobre posibles problemas de comunicación entre dispositivos
 			            y ajustes de la configuración}.
 	      \end{itemize}
 
-	      \textit{Story points}= 21.
+	      \textit{Story points}= 34.
 
-	      (5 + 5 + 5 = 15 \textrightarrow{ 21}). Es el siguiente valor en la serie de Fibonacci.
+	      (5 + 13 + 5 = 23 \textrightarrow{ 34}). Es el siguiente valor en la serie de Fibonacci.
 
 \end{itemize}
 
 \textbf{Historia de Usuario 2: Cliente}
 \begin{itemize}
 	\item ``Como cliente, quiero que el sistema permita la gestión completa de ambientes, sensores y actuadores a través de una interfaz intuitiva,
-	      con capacidades para monitorear en tiempo real, recibir notificaciones sobre eventos, ajustar configuraciones de manera remota y visualizar
+	      con capacidades para visualizar en tiempo real, ajustar las configuraciones de manera remota y visualizar
 	      reportes históricos."
 
 	      \begin{itemize}
 		      \item \textbf{Dificultad:} Media (3) \textrightarrow{ Porque implica el desarrollo y personalización de funcionalidades estándar que son comunes
 			            en sistemas de monitoreo y control}.
-		      \item \textbf{Complejidad:} Alta (5) \textrightarrow{ Si bien existen soluciones de este tipo y se podría consultar a profesionales expertos en la
+		      \item \textbf{Complejidad:} Alta (13) \textrightarrow{ Si bien existen soluciones de este tipo y se podría consultar a profesionales expertos en la
 			            materia, integrar todas las funcionalidades en una interfaz coherente y eficiente podría ser complejo}.
-		      \item \textbf{Riesgo:} Media (3) \textrightarrow{ Porque la integración de múltiples módulos y la gestión de datos en tiempo real presentan riesgos
+		      \item \textbf{Riesgo:} Media (3) \textrightarrow{ Porque la integración de múltiples módulos y la gestión de datos en tiempo real presenta riesgos
 			            moderados que podrían afectar la estabilidad del sistema}.
 	      \end{itemize}
 
-	      \textit{Story points}= 13.
+	      \textit{Story points}= 21.
 
-	      (3 + 5 + 3 = 11 \textrightarrow{ 13}). Es el siguiente valor en la serie de Fibonacci.
+	      (3 + 13 + 3 = 19 \textrightarrow{ 21}). Es el siguiente valor en la serie de Fibonacci.
 
 \end{itemize}
 
 \textbf{Historia de Usuario 3: Usuario final}
 \begin{itemize}
 	\item ``Como usuario final, quiero poder visualizar un panel de control que sea fácil de usar, responsivo desde dispositivos móviles y de escritorio,
-	      que me permita gestionar y monitorizar datos de sensores y actuadores en tiempo real y visualizar reportes históricos."
+	      que me permita gestionar y visualizar datos de sensores y actuadores en tiempo real, además de consultar reportes históricos."
 
 	      \begin{itemize}
 		      \item \textbf{Dificultad:} Media (3) \textrightarrow{ Aunque existen herramientas para el desarrollo, la integración de funcionalidades avanzadas
 			            y la necesidad de una interfaz de usuario adaptativa para diferentes dispositivos pueden añadir dificultad}.
-		      \item \textbf{Complejidad:} Alta (5) \textrightarrow{ El diseño y la implementación de una interfaz responsiva que soporte múltiples funcionalidades
+		      \item \textbf{Complejidad:} Alta (13) \textrightarrow{ El diseño y la implementación de una interfaz responsiva que soporte múltiples funcionalidades
 			            (monitoreo en tiempo real, datos históricos, gestión remota) pueden requerir un desarrollo más complejo}.
-		      \item \textbf{Riesgo:} Media (3) \textrightarrow{ Si bien las tecnologías están establecidas, la implementación exitosa de todas las funcionalidades
-			            sin problemas técnicos  y la integración con otras partes del sistema pueden presentar riesgos}.
+		      \item \textbf{Riesgo:} Media (3) \textrightarrow{ Si bien existen las tecnologías para desarrollar el proyecto, la implementación exitosa de todas las
+			            funcionalidades sin problemas técnicos  y la integración con otras partes del sistema pueden presentar riesgos}.
 	      \end{itemize}
 
-	      \textit{Story points}= 13.
+	      \textit{Story points}= 21.
 
-	      (3 + 5 + 3 = 11 \textrightarrow{ 13}). Es el siguiente valor en la serie de Fibonacci.
+	      (3 + 13 + 3 = 19 \textrightarrow{ 21}). Es el siguiente valor en la serie de Fibonacci.
 
 \end{itemize}

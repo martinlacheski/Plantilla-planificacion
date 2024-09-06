@@ -55,7 +55,11 @@
 \newcommand*{\fechaFINALPlan}[1]{\def\fechaFinalPlanName{#1}}
 \newcommand*{\fechaFINALTrabajo}[1]{\def\fechaFinalName{#1}} 
 
+% Cantidad de horas estimadas para el proyecto
+\newcommand{\horasProyecto}[1]{\def\horasProyecto{#1}}
 
+% Costo estimado fel proyecto
+\newcommand{\costoProyecto}[1]{\def\costoProyecto{#1}}
 
 \def\@title{Plan de proyecto del Trabajo Final} %TODO ver si se puede agregar el campo con el nombre del autor acá
 
