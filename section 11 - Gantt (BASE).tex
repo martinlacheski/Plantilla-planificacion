@@ -1,0 +1,209 @@
+\begin{consigna}{red}
+	Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
+
+	\begin{itemize}
+		\item Planner
+		\item GanttProject
+		\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\
+		      \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+		\item Creately, herramienta online colaborativa.
+		      \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+		\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\
+		      \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+	\end{itemize}
+
+	Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra
+	sea suficientemente grande como para ser legible. Si el diagrama queda
+	demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la
+	parte del diagrama de barras del diagrama de Gantt.
+
+	Configurar el software para que en la parte de la tabla muestre los códigos del
+	EDT (WBS).\\ Configurar el software para que al lado de cada barra muestre el
+	nombre de cada tarea.\\ Revisar que la fecha de finalización coincida con lo
+	indicado en el Acta Constitutiva.
+
+	En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt
+	realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el
+	código que lo genera y usarlo de base para construir el propio.
+
+	Las fechas pueden ser calculadas utilizando alguna de las herramientas antes
+	citadas. Sin embargo, el siguiente ejemplo fue elaborado utilizando
+	\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta
+		hoja de cálculo}.
+
+	Es importante destacar que el ancho del diagrama estará dado por la longitud
+	del texto utilizado para las tareas (Ejemplo: tarea 1, tarea 2, etcétera) y el
+	valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
+	ajustar este valor y, quizás, acortar los nombres de las tareas.
+
+	\begin{landscape}
+		\begin{figure}[htpb]
+			\begin{center}
+				\begin{ganttchart}[
+						time slot unit=day,
+						time slot format=isodate,
+						x unit=0.3cm, % Ajusta el ancho de cada día
+						y unit title=0.9cm, % Aumenta la altura de los títulos
+						y unit chart=0.8cm, % Aumenta la altura de las filas del gráfico
+						milestone/.append style={xscale=4},
+						vgrid,
+						hgrid,
+						compress calendar % Permite ajustar el ancho de los días
+						% today=2024-08-20, % Desactiva la línea de TODAY quitando o comentando esta línea
+					]{2024-08-20}{2024-09-10}
+					\gantttitlecalendar*{2024-08-20}{2024-09-10}{year} \\
+					\gantttitlecalendar*{2024-08-20}{2024-09-10}{month} \\
+					\gantttitlecalendar*{2024-08-20}{2024-09-10}{day} \\ % Agrega los días
+	
+					\ganttgroup{Planificación del proyecto}{2024-08-20}{2024-09-10} \\
+					\ganttbar{Elaboración del documento de planificación}{2024-08-20}{2024-09-05} \\
+					\ganttbar{Diseño de la arquitectura del proyecto}{2024-09-06}{2024-09-10} \\
+	
+				\end{ganttchart}
+			\end{center}
+			\caption{Diagrama de Gantt del Proyecto}
+			\label{fig:gantt}
+		\end{figure}
+	\end{landscape}
+
+	\begin{landscape}
+		\begin{figure}[htpb]
+			\centering
+			\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+			\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
+			\label{fig:diagGantt}
+		\end{figure}
+
+	\end{landscape}
+
+\end{consigna}
+
+
+
+
+\begin{landscape}
+	\begin{figure}[htpb]
+		\begin{center}
+			\begin{ganttchart}[
+					time slot unit=day,
+					time slot format=isodate,
+					x unit=0.038cm,
+					y unit title=0.7cm,
+					y unit chart=0.6cm,
+					milestone/.append style={xscale=4},
+					vgrid,
+					hgrid,
+					today=2024-08-20]{2024-10-21}{2024-11-10}
+				\gantttitlecalendar*{2024-10-21}{2024-11-10}{year} \\
+				\gantttitlecalendar*{2024-10-21}{2024-11-10}{month} \\
+
+				\ganttgroup{Prototipado del proyecto}{2024-10-21}{2024-11-10} \\
+				\ganttbar{Configuración y conexionado de sensores y actuadores}{2024-10-21}{2024-10-31} \\
+				\ganttbar{Integración de componentes y microcontroladores}{2024-11-01}{2024-11-10} \\
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt del Proyecto}
+		\label{fig:gantt3}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htpb]
+		\begin{center}
+			\begin{ganttchart}[
+					time slot unit=day,
+					time slot format=isodate,
+					x unit=0.038cm,
+					y unit title=0.7cm,
+					y unit chart=0.6cm,
+					milestone/.append style={xscale=4},
+					vgrid,
+					hgrid,
+					today=2024-08-20
+				]{2024-08-20}{2025-06-30}
+				\gantttitlecalendar*{2024-11-11}{2025-02-20}{year} \\
+				\gantttitlecalendar*{2024-11-11}{2025-02-20}{month} \\
+
+				\ganttgroup{Desarrollo del firmware}{2024-11-11}{2025-01-10} \\
+				\ganttbar{Configuración inicial de los microcontroladores}{2024-11-11}{2024-11-12} \\
+				\ganttbar{Implementación y configuración de certificados TLS}{2024-11-13}{2024-11-22} \\
+				\ganttbar{Firmware nodo sensor de temperatura, humedad, presión y luz}{2024-11-23}{2024-12-07} \\
+				\ganttbar{Firmware nodo sensor de dióxido de carbono}{2024-12-08}{2024-12-22} \\
+				\ganttbar{Firmware nodo sensor de pH, CE y TDS}{2024-12-23}{2025-01-06} \\
+				\ganttbar{Firmware nodo sensor de solución nutritiva}{2025-01-07}{2025-01-21} \\
+				\ganttbar{Firmware nodo sensor de agua, nutrientes y energía eléctrica}{2025-01-22}{2025-02-05} \\
+				\ganttbar{Firmware nodo actuador}{2025-02-06}{2025-02-20} \\
+
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt del Proyecto}
+		\label{fig:gantt}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htpb]
+		\begin{center}
+			\begin{ganttchart}[
+					time slot unit=day,
+					time slot format=isodate,
+					x unit=0.038cm,
+					y unit title=0.7cm,
+					y unit chart=0.6cm,
+					milestone/.append style={xscale=4},
+					vgrid,
+					hgrid,
+					today=2024-08-20
+				]{2024-08-20}{2025-06-30}
+				\gantttitlecalendar*{2025-02-21}{2025-04-10}{year} \\
+				\gantttitlecalendar*{2025-02-21}{2025-05-31}{month} \\
+
+				\ganttgroup{Desarrollo del backend}{2025-02-21}{2025-04-10} \\
+				\ganttbar{Configuración inicial del entorno}{2025-02-21}{2025-02-28} \\
+				\ganttbar{Implementación del broker MQTT}{2025-03-01}{2025-03-10} \\
+				\ganttbar{Configuración de certificados TLS y JWT}{2025-03-11}{2025-03-20} \\
+				\ganttbar{Configuración y prueba de la base de datos}{2025-03-21}{2025-03-30} \\
+				\ganttbar{Implementación de WebSockets y endpoints}{2025-03-31}{2025-04-10} \\
+
+				\ganttgroup{Desarrollo del frontend}{2025-04-11}{2025-05-31} \\
+				\ganttbar{Configuración del entorno y TLS}{2025-04-11}{2025-04-20} \\
+				\ganttbar{Implementación de JWT y WebSockets}{2025-04-21}{2025-05-01} \\
+				\ganttbar{Desarrollo de interfaces de usuario}{2025-05-02}{2025-05-31} \\
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt del Proyecto}
+		\label{fig:gantt}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htpb]
+		\begin{center}
+			\begin{ganttchart}[
+					time slot unit=day,
+					time slot format=isodate,
+					x unit=0.038cm,
+					y unit title=0.7cm,
+					y unit chart=0.6cm,
+					milestone/.append style={xscale=4},
+					vgrid,
+					hgrid,
+					today=2024-08-20
+				]{2024-08-20}{2025-06-30}
+				\gantttitlecalendar*{2024-06-01}{2025-06-30}{year} \\
+				\gantttitlecalendar*{2024-06-01}{2025-06-30}{month} \\
+
+				\ganttgroup{Pruebas y validación}{2025-06-01}{2025-06-15} \\
+				\ganttbar{Pruebas de microcontroladores y firmware}{2025-06-01}{2025-06-05} \\
+				\ganttbar{Pruebas de backend y frontend}{2025-06-06}{2025-06-10} \\
+				\ganttbar{Pruebas de seguridad y rendimiento}{2025-06-11}{2025-06-15} \\
+
+				\ganttgroup{Documentación del proyecto}{2025-06-16}{2025-06-30} \\
+				\ganttbar{Informe de avance y revisión}{2025-06-16}{2025-06-20} \\
+				\ganttbar{Video demostración y presentación final}{2025-06-21}{2025-06-30} \\
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt del Proyecto}
+		\label{fig:gantt}
+	\end{figure}
+\end{landscape}
