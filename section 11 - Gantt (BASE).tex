@@ -78,6 +78,83 @@
 
 \end{consigna}
 
+En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt
+realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el
+código que lo genera y usarlo de base para construir el propio.
+
+Las fechas pueden ser calculadas utilizando alguna de las herramientas antes
+citadas. Sin embargo, el siguiente ejemplo fue elaborado utilizando
+\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta
+	hoja de cálculo}.
+
+Es importante destacar que el ancho del diagrama estará dado por la longitud
+del texto utilizado para las tareas (Ejemplo: tarea 1, tarea 2, etcétera) y el
+valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
+ajustar este valor y, quizás, acortar los nombres de las tareas.
+
+% Diagrama de Gantt Planificación del proyecto
+\begin{landscape}
+	\begin{figure}[htpb]
+		\begin{center}
+			\begin{ganttchart}[
+					time slot unit=day,
+					time slot format=isodate,
+					x unit=0.5cm, % Aumenta el ancho de las barras
+					y unit title=0.7cm, % Aumenta la altura de los títulos
+					y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+					milestone/.append style={xscale=4},
+					vgrid,
+					hgrid,
+				]{2024-08-20}{2024-09-10}
+				\gantttitlecalendar*{2024-08-20}{2024-09-10}{year} \\
+				\gantttitlecalendar*{2024-08-20}{2024-09-10}{month} \\
+				\gantttitlecalendar*{2024-08-20}{2024-09-10}{day} \\
+
+				\ganttgroup{Planificación del proyecto}{2024-08-20}{2024-09-10} \\
+				\ganttbar{Elaboración del documento de planificación}{2024-08-20}{2024-09-05} \\
+				\ganttbar{Diseño de la arquitectura del proyecto}{2024-09-06}{2024-09-10} \\
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt del Proyecto}
+		\label{fig:gantt1}
+	\end{figure}
+\end{landscape}
+
+% Diagrama de Gantt Investigación preliminar
+\begin{landscape}
+	\begin{figure}[htpb]
+		\begin{center}
+			\begin{ganttchart}[
+					time slot unit=day,
+					time slot format=isodate,
+					x unit=0.5cm, % Aumenta el ancho de las barras
+					y unit title=0.7cm, % Aumenta la altura de los títulos
+					y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+					milestone/.append style={xscale=4},
+					vgrid,
+					hgrid,
+				]{2024-09-11}{2024-10-13}
+				\gantttitlecalendar*{2024-09-11}{2024-10-13}{year} \\
+				\gantttitlecalendar*{2024-09-11}{2024-10-13}{month} \\
+				\gantttitlecalendar*{2024-09-11}{2024-10-13}{day} \\
+
+				\ganttgroup{Investigación preliminar}{2024-09-11}{2024-10-13} \\
+				\ganttbar{Investigación de protocolos}{2024-09-11}{2024-09-16} \\
+				\ganttbar{Investigación de  TLS}{2024-09-17}{2024-09-18} \\
+				\ganttbar{Investigación de microcontroladores}{2024-09-19}{2024-09-20} \\
+				\ganttbar{Investigación de sensores y actuadores}{2024-09-21}{2024-09-24} \\
+				\ganttbar{Investigación de la base de datos}{2024-09-25}{2024-09-28} \\
+				\ganttbar{Investigación del framework backend}{2024-09-29}{2024-10-02} \\
+				\ganttbar{Investigación del framework frontend}{2024-10-03}{2024-10-06} \\
+				\ganttbar{Investigación del servidor IoT}{2024-10-07}{2024-10-10} \\
+				\ganttbar{Instalación del entorno de desarrollo}{2024-10-11}{2024-10-13} \\
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt del Proyecto}
+		\label{fig:gantt1}
+	\end{figure}
+\end{landscape}
+
 
 
 
@@ -207,3 +284,148 @@
 		\label{fig:gantt}
 	\end{figure}
 \end{landscape}
+
+
+
+
+
+
+
+\begin{table}[ht]
+	\begin{tabularx}{\linewidth}{|p{1cm}|p{10cm}|p{1cm}|p{1.8cm}|p{1.8cm}|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		WBS  & Tarea                                                                                                    & Horas & Inicio     & Fin        \\ \hline
+		1    & Planificación del proyecto                                                                               & 50    & 20-08-2024 & 07-09-2024 \\ \hline
+		1.1  & Elaboración del documento de planificación del proyecto                                                  & 35    & 20-08-2024 & 31-08-2024 \\ \hline
+		1.2  & Diseño de la arquitectura del proyecto                                                                   & 15    & 02-09-2024 & 07-09-2024 \\ \hline
+		2    & Investigación preliminar                                                                                 & 80    & 09-09-2024 & 19-10-2024 \\ \hline
+		2.1  & Investigación de los protocolos MQTT, HTTP y WebSockets                                                  & 12    & 09-09-2024 & 13-09-2024 \\ \hline
+		2.2  & Investigación de certificado TLS                                                                         & 8     & 14-09-2024 & 17-09-2024 \\ \hline
+		2.3  & Investigación y elección de los microcontroladores a utilizar                                            & 5     & 18-09-2024 & 20-09-2024 \\ \hline
+		2.4  & Investigación y elección de los sensores y actuadores a utilizar                                         & 10    & 21-09-2024 & 26-09-2024 \\ \hline
+		2.5  & Investigación y elección de la base de datos a utilizar                                                  & 10    & 27-09-2024 & 02-10-2024 \\ \hline
+		2.6  & Investigación y elección del framework de backend a utilizar                                             & 10    & 03-10-2024 & 08-10-2024 \\ \hline
+		2.7  & Investigación y elección del framework de frontend a utilizar                                            & 10    & 09-10-2024 & 14-10-2024 \\ \hline
+		2.8  & Investigación y elección de la plataforma del servidor IoT a utilizar                                    & 10    & 15-10-2024 & 20-10-2024 \\ \hline
+		2.9  & Instalación y puesta a punto del entorno de desarrollo                                                   & 5     & 21-10-2024 & 22-10-2024 \\ \hline
+		3    & Prototipado del proyecto                                                                                 & 30    & 23-10-2024 & 04-11-2024 \\ \hline
+		3.1  & Configuración y conexionado de sensores y actuadores                                                     & 15    & 23-10-2024 & 29-10-2024 \\ \hline
+		3.2  & Integración de componentes y microcontroladores                                                          & 15    & 30-10-2024 & 04-11-2024 \\ \hline
+		4    & Desarrollo del firmware de los microcontroladores                                                        & 127   & 05-11-2024 & 30-12-2024 \\ \hline
+		4.1  & Configuración inicial de los microcontroladores                                                          & 2     & 05-11-2024 & 05-11-2024 \\ \hline
+		4.2  & Implementación y configuración de los certificados TLS                                                   & 10    & 06-11-2024 & 09-11-2024 \\ \hline
+		4.3  & Implementación del firmware del nodo sensor de temp. amb., hum. rel., pres. atmo. y nivel de luminosidad & 20    & 11-11-2024 & 16-11-2024 \\ \hline
+		4.4  & Implementación del firmware del nodo sensor de nivel de dióxido de carbono                               & 15    & 18-11-2024 & 23-11-2024 \\ \hline
+		4.5  & Implementación del firmware del nodo sensor de pH, CE y TDS                                              & 20    & 25-11-2024 & 30-11-2024 \\ \hline
+		4.6  & Implementación del firmware del nodo sensor de nivel y temperatura de la solución nutritiva              & 20    & 02-12-2024 & 07-12-2024 \\ \hline
+		4.7  & Implementación del firmware del nodo sensor de agua, nutrientes y energía eléctrica                      & 20    & 09-12-2024 & 14-12-2024 \\ \hline
+		4.8  & Implementación del firmware del nodo actuador                                                            & 20    & 16-12-2024 & 21-12-2024 \\ \hline
+		5    & Desarrollo del backend                                                                                   & 80    & 02-02-2025 & 15-03-2025 \\ \hline
+		5.1  & Configuración inicial del entorno                                                                        & 10    & 02-02-2025 & 05-02-2025 \\ \hline
+		5.2  & Implementación y configuración del broker MQTT                                                           & 10    & 06-02-2025 & 09-02-2025 \\ \hline
+		5.3  & Implementación y configuración de los certificados TLS                                                   & 10    & 10-02-2025 & 13-02-2025 \\ \hline
+		5.4  & Implementación y configuración de JWT                                                                    & 10    & 14-02-2025 & 18-02-2025 \\ \hline
+		5.5  & Implementación y configuración de la base de datos                                                       & 10    & 19-02-2025 & 22-02-2025 \\ \hline
+		5.6  & Implementación y configuración de WebSockets                                                             & 10    & 23-02-2025 & 26-02-2025 \\ \hline
+		5.7  & Implementación de los endpoints de usuarios                                                              & 4     & 27-02-2025 & 28-02-2025 \\ \hline
+		5.8  & Pruebas de los endpoints de usuarios                                                                     & 1     & 01-03-2025 & 01-03-2025 \\ \hline
+		5.9  & Implementación de los endpoints de ambientes                                                             & 2     & 03-03-2025 & 04-03-2025 \\ \hline
+		5.10 & Pruebas de los endpoints de ambientes                                                                    & 1     & 05-03-2025 & 05-03-2025 \\ \hline
+		5.11 & Implementación de los endpoints de sensores                                                              & 4     & 06-03-2025 & 07-03-2025 \\ \hline
+		5.12 & Pruebas de los endpoints de sensores                                                                     & 1     & 08-03-2025 & 08-03-2025 \\ \hline
+		5.13 & Implementación de los endpoints de actuadores                                                            & 4     & 10-03-2025 & 11-03-2025 \\ \hline
+		5.14 & Pruebas de los endpoints de actuadores                                                                   & 1     & 12-03-2025 & 12-03-2025 \\ \hline
+		5.15 & Implementación del endpoint de mediciones de sensores                                                    & 2     & 13-03-2025 & 13-03-2025 \\ \hline
+	\end{tabularx}
+	\caption{Lista de tareas del proyecto con fechas.}
+	\label{tab:tabGantt}
+\end{table}
+
+\begin{table}[ht]
+	\begin{tabularx}{\linewidth}{|p{1cm}|p{10cm}|p{1cm}|p{1.8cm}|p{1.8cm}|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		WBS   & Tarea                                                                 & Horas & Inicio     & Fin        \\ \hline
+		5.16  & Pruebas del endpoint de mediciones de sensores                        & 1     & 14-03-2025 & 14-03-2025 \\ \hline
+		5.17  & Implementación del endpoint de estados de actuadores                  & 2     & 15-03-2025 & 15-03-2025 \\ \hline
+		5.18  & Pruebas del endpoint de estados de actuadores                         & 1     & 16-03-2025 & 16-03-2025 \\ \hline
+		5.19  & Implementación del endpoint de parámetros enviados a los sensores     & 2     & 17-03-2025 & 17-03-2025 \\ \hline
+		5.20  & Pruebas del endpoint de parámetros enviados a los sensores            & 1     & 18-03-2025 & 18-03-2025 \\ \hline
+		5.21  & Implementación del endpoint de parámetros enviados a los actuadores   & 2     & 20-03-2025 & 20-03-2025 \\ \hline
+		5.22  & Pruebas del endpoint de parámetros enviados a los actuadores          & 1     & 21-03-2025 & 21-03-2025 \\ \hline
+		6     & Desarrollo del frontend                                               & 93    & 24-03-2025 & 08-06-2025 \\ \hline
+		6.1   & Configuración inicial del entorno                                     & 10    & 24-03-2025 & 27-03-2025 \\ \hline
+		6.2   & Implementación y configuración de los certificados TLS                & 10    & 28-03-2025 & 01-04-2025 \\ \hline
+		6.3   & Implementación y configuración de JWT                                 & 10    & 02-04-2025 & 05-04-2025 \\ \hline
+		6.4   & Implementación y configuración de WebSockets                          & 5     & 07-04-2025 & 09-04-2025 \\ \hline
+		6.5   & Implementación de la interfaz de login de usuario                     & 4     & 10-04-2025 & 11-04-2025 \\ \hline
+		6.6   & Pruebas de la interfaz de login de usuario                            & 1     & 14-04-2025 & 14-04-2025 \\ \hline
+		6.7   & Implementación de las interfaces de manejo de usuarios                & 4     & 15-04-2025 & 16-04-2025 \\ \hline
+		6.8   & Pruebas de las interfaces de manejo de usuarios                       & 1     & 17-04-2025 & 17-04-2025 \\ \hline
+		6.9   & Implementación de las interfaces de manejo de ambientes               & 3     & 18-04-2025 & 21-04-2025 \\ \hline
+		6.10  & Pruebas de las interfaces de manejo de ambientes                      & 1     & 22-04-2025 & 22-04-2025 \\ \hline
+		6.11  & Implementación de las interfaces de manejo de sensores                & 5     & 23-04-2025 & 27-04-2025 \\ \hline
+		6.12  & Pruebas de las interfaces de manejo de sensores                       & 1     & 28-04-2025 & 28-04-2025 \\ \hline
+		6.13  & Implementación de las interfaces de manejo de actuadores              & 5     & 29-04-2025 & 04-05-2025 \\ \hline
+		6.14  & Pruebas de las interfaces de manejo de actuadores                     & 1     & 05-05-2025 & 05-05-2025 \\ \hline
+		6.15  & Implementación de la interfaz de mediciones de sensores               & 8     & 06-05-2025 & 13-05-2025 \\ \hline
+		6.16  & Pruebas de la interfaz de mediciones de sensores                      & 1     & 14-05-2025 & 14-05-2025 \\ \hline
+		6.17  & Implementación de la interfaz de estados de actuadores                & 8     & 15-05-2025 & 22-05-2025 \\ \hline
+		6.18  & Pruebas de la interfaz de estados de actuadores                       & 1     & 23-05-2025 & 23-05-2025 \\ \hline
+		6.19  & Implementación de la interfaz de parámetros enviados a los sensores   & 3     & 26-05-2025 & 28-05-2025 \\ \hline
+		6.20  & Pruebas de la interfaz de parámetros enviados a los sensores          & 1     & 29-05-2025 & 29-05-2025 \\ \hline
+		6.21  & Implementación de la interfaz de parámetros enviados a los actuadores & 3     & 30-05-2025 & 03-06-2025 \\ \hline
+		6.22  & Pruebas de la interfaz de parámetros enviados a los actuadores        & 1     & 04-06-2025 & 04-06-2025 \\ \hline
+		6.23  & Implementación de la interfaz principal del sistema                   & 5     & 05-06-2025 & 10-06-2025 \\ \hline
+		6.24  & Pruebas de la interfaz de la interfaz principal del sistema           & 1     & 11-06-2025 & 11-06-2025 \\ \hline
+		7     & Pruebas y validación                                                  & 47    & 12-06-2025 & 26-06-2025 \\ \hline
+		7.1   & Pruebas de los microcontroladores                                     &       &            &            \\ \hline
+		7.1.1 & Pruebas de los firmwares de los microcontroladores                    & 5     & 12-06-2025 & 14-06-2025 \\ \hline
+		7.1.2 & Pruebas de conexión y comunicación de los microcontroladores          & 5     & 15-06-2025 & 18-06-2025 \\ \hline
+		7.1.3 & Pruebas de seguridad                                                  & 5     & 19-06-2025 & 21-06-2025 \\ \hline
+		7.1.4 & Pruebas de sensores y actuadores                                      & 5     & 22-06-2025 & 25-06-2025 \\ \hline
+		7.2   & Pruebas del backend                                                   &       &            &            \\ \hline
+		7.2.1 & Pruebas de MQTT y TLS                                                 & 3     & 26-06-2025 & 28-06-2025 \\ \hline
+		7.2.2 & Pruebas de validación de almacenamiento de los datos                  & 3     & 29-06-2025 & 01-07-2025 \\ \hline
+	\end{tabularx}
+	\caption{Lista de tareas del proyecto con fechas.}
+	\label{tab:tabGantt}
+\end{table}
+
+\begin{table}[ht]
+	\begin{tabularx}{\linewidth}{|p{1cm}|p{10cm}|p{1cm}|p{1.8cm}|p{1.8cm}|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		WBS   & Tarea                                                     & Horas & Inicio     & Fin        \\ \hline
+		7.2.3 & Pruebas de manejo de los datos en tiempo real y endpoints & 3     & 02-07-2025 & 04-07-2025 \\ \hline
+		7.2.4 & Pruebas de seguridad                                      & 5     & 05-07-2025 & 09-07-2025 \\ \hline
+		7.3   & Pruebas del frontend                                      &       &            &            \\ \hline
+		7.3.1 & Pruebas de interfaz y usabilidad                          & 3     & 10-07-2025 & 12-07-2025 \\ \hline
+		7.3.2 & Pruebas de visualización de los reportes y gráficos       & 3     & 13-07-2025 & 15-07-2025 \\ \hline
+		7.3.3 & Pruebas de visualización de los datos en tiempo real      & 3     & 16-07-2025 & 18-07-2025 \\ \hline
+		7.3.4 & Pruebas de seguridad                                      & 5     & 19-07-2025 & 23-07-2025 \\ \hline
+		8     & Documentación del proyecto                                & 100   & 24-07-2025 & 16-09-2025 \\ \hline
+		8.1   & Informe de avance                                         & 15    & 24-07-2025 & 30-07-2025 \\ \hline
+		8.2   & Video con demostración del sistema                        & 2     & 31-07-2025 & 01-08-2025 \\ \hline
+		8.3   & Memoria del proyecto                                      & 50    & 02-08-2025 & 01-09-2025 \\ \hline
+		8.4   & Revisión de memoria del proyecto                          & 10    & 02-09-2025 & 08-09-2025 \\ \hline
+		8.5   & Presentación final                                        & 20    & 09-09-2025 & 16-09-2025 \\ \hline
+	\end{tabularx}
+	\caption{Lista de tareas del proyecto con fechas.}
+	\label{tab:tabGantt}
+\end{table}
+
+\begin{itemize}
+	\item Cliente: El \clientename\hspace{1px} es especialista en cultivos y gestión
+	      forestal, con amplia experiencia en cultivos hidropónicos. Va a colaborar con
+	      la definición de los requerimientos y el seguimiento del proyecto.
+	\item Orientadores:
+	      \begin{itemize}
+		      \item El Director \supname\hspace{1px} es experto en la temática y guiará con la
+		            implementación de los protocolos y herramientas del proyecto.
+		      \item La Codirectora \cosupname , experta en Sistemas de Información, ayudará con el
+		            seguimiento metodológico, para garantizar una gestión rigurosa y efectiva del
+		            desarrollo del trabajo.
+	      \end{itemize}
+\end{itemize}

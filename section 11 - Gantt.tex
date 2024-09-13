@@ -1,76 +1,50 @@
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt
-realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el
-código que lo genera y usarlo de base para construir el propio.
+En la tabla \ref{tab:tabGantt}, se puede visualizar un resumen del detalle de
+la cantidad de horas, fecha de inicio y fecha de fin de cada grupo de tareas
+estimadas a dedicar en el desarrollo del proyecto.
 
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes
-citadas. Sin embargo, el siguiente ejemplo fue elaborado utilizando
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta
-	hoja de cálculo}.
+\begin{table}[ht]
+	\begin{tabularx}{\linewidth}{|p{0.8cm}|p{8.33cm}|p{1cm}|p{1.8cm}|p{1.8cm}|}
+		\hline
+		%\rowcolor[HTML]{C0C0C0}
+		%WBS                           & Tarea                                             & Horas           & Inicio     & Fin        \\ \hline
+		%\textbf{ID} & \textbf{Tarea} & \textbf{Duración (días)} & \textbf{Fecha Inicio} & \textbf{Fecha Fin} \\ \hline
+		\multicolumn{5}{|c|}{Etapa 1}                                                                                                       \\ \hline
+		\rowcolor[HTML]{C0C0C0}
+		WBS                                 & Tarea                                             & Horas           & Inicio     & Fin        \\ \hline
+		\centering{1}                       & Planificación del proyecto                        & \raggedleft{50} & 20-08-2024 & 18-09-2024 \\ \hline
+		\centering{2}                       & Investigación preliminar                          & \raggedleft{80} & 07-10-2024 & 25-10-2024 \\ \hline
+		\centering{3}                       & Prototipado del proyecto                          & \raggedleft{30} & 28-10-2024 & 15-11-2024 \\ \hline
+		\centering{4}                       & Desarrollo del firmware de los microcontroladores & \raggedleft{67} & 18-11-2024 & 20-12-2024 \\ \hline
+		\multicolumn{2}{|r|}{Total Etapa 1} & \raggedleft{227}                                  & 20-08-2024      & 20-11-2024              \\ \hline
+		\multicolumn{5}{|c|}{Etapa 2}                                                                                                       \\ \hline
+		\rowcolor[HTML]{C0C0C0}
+		WBS                                 & Tarea                                             & Horas           & Inicio     & Fin        \\ \hline
+		\centering{4}                       & Desarrollo del firmware de los microcontroladores & \raggedleft{60} & 20-01-2025 & 14-02-2025 \\ \hline
+		\centering{5}                       & Desarrollo del backend                            & \raggedleft{90} & 17-02-2025 & 21-03-2025 \\ \hline
+		\centering{6}                       & Desarrollo del frontend                           & \raggedleft{93} & 24-03-2025 & 25-04-2025 \\ \hline
+		\centering{7}                       & Pruebas y validación                              & \raggedleft{48} & 28-04-2025 & 16-05-2025 \\ \hline
+		\centering{8}                       & Documentación del proyecto                        & \raggedleft{97} & 19-05-2025 & 20-06-2025 \\ \hline
+		\multicolumn{2}{|r|}{Total Etapa 2} & \raggedleft{388}                                  & 20-01-2025      & 20-06-2025              \\ \hline
+		\multicolumn{2}{|r|}{Totales}       & \raggedleft{615}                                  & 20-08-2024      & 20-06-2025              \\ \hline
+	\end{tabularx}
+	\caption{Lista de tareas del proyecto con fechas.}
+	\label{tab:tabGantt}
+\end{table}
 
-Es importante destacar que el ancho del diagrama estará dado por la longitud
-del texto utilizado para las tareas (Ejemplo: tarea 1, tarea 2, etcétera) y el
-valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
+Para el desarrollo de las actividades se tiene en cuenta las siguientes
+consideraciones:
 
-% Diagrama de Gantt Planificación del proyecto
-\begin{landscape}
-	\begin{figure}[htpb]
-		\begin{center}
-			\begin{ganttchart}[
-					time slot unit=day,
-					time slot format=isodate,
-					x unit=0.5cm, % Aumenta el ancho de las barras
-					y unit title=0.7cm, % Aumenta la altura de los títulos
-					y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
-					milestone/.append style={xscale=4},
-					vgrid,
-					hgrid,
-				]{2024-08-20}{2024-09-10}
-				\gantttitlecalendar*{2024-08-20}{2024-09-10}{year} \\
-				\gantttitlecalendar*{2024-08-20}{2024-09-10}{month} \\
-				\gantttitlecalendar*{2024-08-20}{2024-09-10}{day} \\
-
-				\ganttgroup{Planificación del proyecto}{2024-08-20}{2024-09-10} \\
-				\ganttbar{Elaboración del documento de planificación}{2024-08-20}{2024-09-05} \\
-				\ganttbar{Diseño de la arquitectura del proyecto}{2024-09-06}{2024-09-10} \\
-			\end{ganttchart}
-		\end{center}
-		\caption{Diagrama de Gantt del Proyecto}
-		\label{fig:gantt1}
-	\end{figure}
-\end{landscape}
-
-% Diagrama de Gantt Investigación preliminar
-\begin{landscape}
-	\begin{figure}[htpb]
-		\begin{center}
-			\begin{ganttchart}[
-					time slot unit=day,
-					time slot format=isodate,
-					x unit=0.5cm, % Aumenta el ancho de las barras
-					y unit title=0.7cm, % Aumenta la altura de los títulos
-					y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
-					milestone/.append style={xscale=4},
-					vgrid,
-					hgrid,
-				]{2024-09-11}{2024-10-13}
-				\gantttitlecalendar*{2024-09-11}{2024-10-13}{year} \\
-				\gantttitlecalendar*{2024-09-11}{2024-10-13}{month} \\
-				\gantttitlecalendar*{2024-09-11}{2024-10-13}{day} \\
-
-				\ganttgroup{Investigación preliminar}{2024-09-11}{2024-10-13} \\
-				\ganttbar{Investigación de protocolos}{2024-09-11}{2024-09-16} \\
-				\ganttbar{Investigación de  TLS}{2024-09-17}{2024-09-18} \\
-				\ganttbar{Investigación de microcontroladores}{2024-09-19}{2024-09-20} \\
-				\ganttbar{Investigación de sensores y actuadores}{2024-09-21}{2024-09-24} \\
-				\ganttbar{Investigación de la base de datos}{2024-09-25}{2024-09-28} \\
-				\ganttbar{Investigación del framework backend}{2024-09-29}{2024-10-02} \\
-				\ganttbar{Investigación del framework frontend}{2024-10-03}{2024-10-06} \\
-				\ganttbar{Investigación del servidor IoT}{2024-10-07}{2024-10-10} \\
-				\ganttbar{Instalación del entorno de desarrollo}{2024-10-11}{2024-10-13} \\
-			\end{ganttchart}
-		\end{center}
-		\caption{Diagrama de Gantt del Proyecto}
-		\label{fig:gantt1}
-	\end{figure}
-\end{landscape}
+\begin{itemize}
+	\item Etapa 1: Se estima una proyección de 15 horas por semana de dedicación en el
+	      desarrollo del proyecto.
+	\item El desarrollo del firmware de los microcontroladores se realiza en dos partes:
+	      \begin{itemize}
+		      \item Primera parte: Durante el año 2024 se realiza un avance estimado de 67 horas en
+		            el desarrollo de esta actividad. Se estima culminar la Implementación del
+		            firmware del nodo sensor de pH, CE y TDS
+		      \item Segunda parte: Durante el año 2024 se realiza un avance estimado de 60 horas en
+		            el desarrollo de esta actividad.
+	      \end{itemize}
+	\item Etapa 2: Se estima una proyección de 20 horas por semana de dedicación en el
+	      desarrollo del proyecto hasta la culminación del mismo.
+\end{itemize}
