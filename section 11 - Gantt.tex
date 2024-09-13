@@ -1,5 +1,7 @@
+\subsection{Resumen}
+
 En la tabla \ref{tab:tabGantt}, se puede visualizar un resumen del detalle de
-la cantidad de horas, fecha de inicio y fecha de fin de cada grupo de tareas
+la cantidad de horas, la fecha de inicio y fin de cada grupo de tareas
 estimadas a dedicar en el desarrollo del proyecto.
 
 \begin{table}[ht]
@@ -12,7 +14,7 @@ estimadas a dedicar en el desarrollo del proyecto.
 		\rowcolor[HTML]{C0C0C0}
 		WBS                                 & Tarea                                             & Horas           & Inicio     & Fin        \\ \hline
 		\centering{1}                       & Planificación del proyecto                        & \raggedleft{50} & 20-08-2024 & 18-09-2024 \\ \hline
-		\centering{2}                       & Investigación preliminar                          & \raggedleft{80} & 07-10-2024 & 25-10-2024 \\ \hline
+		\centering{2}                       & Investigación preliminar                          & \raggedleft{80} & 30-09-2024 & 25-10-2024 \\ \hline
 		\centering{3}                       & Prototipado del proyecto                          & \raggedleft{30} & 28-10-2024 & 15-11-2024 \\ \hline
 		\centering{4}                       & Desarrollo del firmware de los microcontroladores & \raggedleft{67} & 18-11-2024 & 20-12-2024 \\ \hline
 		\multicolumn{2}{|r|}{Total Etapa 1} & \raggedleft{227}                                  & 20-08-2024      & 20-11-2024              \\ \hline
@@ -35,16 +37,371 @@ Para el desarrollo de las actividades se tiene en cuenta las siguientes
 consideraciones:
 
 \begin{itemize}
-	\item Etapa 1: Se estima una proyección de 15 horas por semana de dedicación en el
+	\item El proyecto se va a realizar en dos etapas. La primer etapa es en el año 2024 y la segunda en el año 2025.
+	\item Etapa 1: Se estima una proyección de 12 horas por semana de dedicación en el
 	      desarrollo del proyecto.
 	\item El desarrollo del firmware de los microcontroladores se realiza en dos partes:
 	      \begin{itemize}
 		      \item Primera parte: Durante el año 2024 se realiza un avance estimado de 67 horas en
-		            el desarrollo de esta actividad. Se estima culminar la Implementación del
-		            firmware del nodo sensor de pH, CE y TDS
+		            el desarrollo de esta actividad. Se estima avanzar hasta la Implementación del
+		            firmware del nodo sensor de pH, CE y TDS.
 		      \item Segunda parte: Durante el año 2024 se realiza un avance estimado de 60 horas en
 		            el desarrollo de esta actividad.
 	      \end{itemize}
 	\item Etapa 2: Se estima una proyección de 20 horas por semana de dedicación en el
 	      desarrollo del proyecto hasta la culminación del mismo.
 \end{itemize}
+
+\subsection{Diagramas}
+
+Para visualizar el diagrama de Gantt de manera correcta, se procede a generar una figura correspondiente a cada tarea.
+Al finalizar, se verá el diagrama completo de todas las actividades a ser desarrolladas en el proyecto.
+
+
+En la figura \ref{fig:gantt1}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 1: Planificación del proyecto}.
+
+% Diagrama de Gantt Planificación del proyecto
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.35cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2024-08-20}{2024-09-18}
+			\gantttitlecalendar*{2024-08-20}{2024-09-18}{year} \\
+			\gantttitlecalendar*{2024-08-20}{2024-09-18}{month} \\
+			%\gantttitlecalendar*{2024-08-20}{2024-09-18}{day} \\
+			\ganttbar{1.1 Elaboración del documento}{2024-08-20}{2024-09-17} \\
+			\ganttbar{1.2 Diseño de la arquitectura}{2024-09-09}{2024-09-18} \\
+		\end{ganttchart}
+		\caption{Planificación del proyecto.}
+
+	\label{fig:gantt1}
+\end{figure}
+
+En la figura \ref{fig:gantt2}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 2: Investigación preliminar}.
+
+% Diagrama de Gantt Investigación preliminar
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.389cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2024-09-30}{2024-10-25}
+			\gantttitlecalendar*{2024-09-30}{2024-10-25}{year} \\
+			\gantttitlecalendar*{2024-09-30}{2024-10-25}{month} \\
+			%\gantttitlecalendar*{2024-10-07}{2024-10-25}{day} \\
+			\ganttbar{2.1 MQTT, HTTP y WebSockets}{2024-09-30}{2024-10-04} \\
+			\ganttbar{2.2 Certificados TLS}{2024-10-07}{2024-10-09} \\
+			\ganttbar{2.3 Microcontroladores}{2024-10-09}{2024-10-10} \\
+			\ganttbar{2.4 Sensores y actuadores}{2024-10-11}{2024-10-15} \\
+			\ganttbar{2.5 Base de datos}{2024-10-15}{2024-10-17} \\
+			\ganttbar{2.6 Framework Backend}{2024-10-18}{2024-10-24} \\
+			\ganttbar{2.7 Framework Fronted}{2024-10-18}{2024-10-24} \\
+			\ganttbar{2.8 plataforma IoT}{2024-10-21}{2024-10-24} \\
+			\ganttbar{2.9 Entorno de desarrollo}{2024-10-24}{2024-10-25} \\
+		\end{ganttchart}
+	\caption{Investigación preliminar.}
+	\label{fig:gantt2}
+\end{figure}
+
+En la figura \ref{fig:gantt3}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 3: Prototipado del proyecto}.
+
+% Diagrama de Gantt Prototipado del proyecto
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.53cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2024-10-28}{2024-11-15}
+			\gantttitlecalendar*{2024-10-28}{2024-11-15}{year} \\
+			\gantttitlecalendar*{2024-10-28}{2024-11-15}{month} \\
+			%\gantttitlecalendar*{2024-08-20}{2024-09-18}{day} \\
+			\ganttbar{3.1 Conexionado de componentes}{2024-10-28}{2024-11-10} \\
+			\ganttbar{3.2 Integración de componentes}{2024-11-04}{2024-11-15} \\
+		\end{ganttchart}
+	\caption{Prototipado del proyecto.}
+	\label{fig:gantt3}
+\end{figure}
+
+En la figura \ref{fig:gantt4.1}, se puede visualizar el detalle de actividades referidas a la primera parte
+de la \textbf{tarea 4: Desarrollo del firmware de los microcontroladores}.
+
+% Diagrama de Gantt Desarrollo del firmware de los microcontroladores (primera parte)
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.33cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2024-11-18}{2024-12-20}
+			\gantttitlecalendar*{2024-11-18}{2024-12-20}{year} \\
+			\gantttitlecalendar*{2024-11-18}{2024-12-20}{month} \\
+			%\gantttitlecalendar*{2024-11-18}{2024-12-20}{day} \\
+			\ganttbar{4.1 Configuraciones iniciales}{2024-11-18}{2024-11-18} \\
+			\ganttbar{4.2 Implementación TLS}{2024-11-18}{2024-11-25} \\
+			\ganttbar{4.3 Sensor Ambiental}{2024-11-25}{2024-12-04} \\
+			\ganttbar{4.4 Sensor ($CO_2$)}{2024-12-05}{2024-12-10} \\
+			\ganttbar{4.5 Sensor pH, CE y TDS}{2024-12-11}{2024-12-20} \\
+		\end{ganttchart}
+	\caption{Desarrollo del firmware de los microcontroladores (primera parte).}
+	\label{fig:gantt4.1}
+\end{figure}
+
+En la figura \ref{fig:gantt4.2}, se puede visualizar el detalle de actividades referidas a la segunda parte
+de la \textbf{tarea 4: Desarrollo del firmware de los microcontroladores}.
+
+% Diagrama de Gantt Desarrollo del firmware de los microcontroladores (segunda parte)
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.42cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2025-01-20}{2025-02-14}
+			\gantttitlecalendar*{2025-01-20}{2025-02-14}{year} \\
+			\gantttitlecalendar*{2025-01-20}{2025-02-14}{month} \\
+			%\gantttitlecalendar*{2024-11-18}{2024-12-20}{day} \\
+			\ganttbar{4.6 Sensor solución nutritiva}{2025-01-20}{2025-01-27} \\
+			\ganttbar{4.7 Sensor consumos}{2025-01-28}{2025-02-06} \\
+			\ganttbar{4.8 Nodo actuador}{2025-02-07}{2025-02-14} \\
+
+		\end{ganttchart}
+	\caption{Desarrollo del firmware de los microcontroladores (segunda parte).}
+	\label{fig:gantt4.2}
+\end{figure}
+
+En la figura \ref{fig:gantt5}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 5: Desarrollo del backend}.
+
+% Diagrama de Gantt Desarrollo del backend
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.3cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2025-02-17}{2025-03-21}
+			\gantttitlecalendar*{2025-02-17}{2025-03-21}{year} \\
+			\gantttitlecalendar*{2025-02-17}{2025-03-21}{month} \\
+			%\gantttitlecalendar*{2024-10-07}{2024-10-25}{day} \\
+			\ganttbar{5.1 Configuración inicial}{2025-02-17}{2025-02-18} \\
+			\ganttbar{5.2 Implementación TLS}{2025-02-18}{2025-02-20} \\
+			\ganttbar{5.3 Broker MQTT}{2025-02-21}{2025-02-25} \\
+			\ganttbar{5.4 Configuración JWT}{2025-02-25}{2025-02-27} \\
+			\ganttbar{5.5 Base de datos}{2025-02-27}{2025-03-03} \\
+			\ganttbar{5.6 Configuración WebSockets}{2025-03-04}{2025-03-06} \\
+			\ganttbar{5.7 y 5.8 Endpoints usuarios}{2025-03-07}{2025-03-10} \\
+			\ganttbar{5.9 y 5.10 Endpoints ambientes}{2025-03-10}{2025-03-11} \\
+			\ganttbar{5.11 y 5.12 Endpoints sensores}{2025-03-11}{2025-03-13} \\
+			\ganttbar{5.13 y 5.14 Endpoints actuadores}{2025-03-13}{2025-03-14} \\
+			\ganttbar{5.15 y 5.16 Mediciones sensores}{2025-03-17}{2025-03-18} \\
+			\ganttbar{5.17 y 5.18 Estados actuadores}{2025-03-18}{2025-03-19} \\
+			\ganttbar{5.19 y 5.20 Parámetros sensores}{2025-03-19}{2025-03-20} \\
+			\ganttbar{5.21 y 5.22 Parámetros actuadores}{2025-03-20}{2025-03-21} \\
+		\end{ganttchart}
+	\caption{Desarrollo del Backend.}
+	\label{fig:gantt5}
+\end{figure}
+
+
+En la figura \ref{fig:gantt6}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 5: Desarrollo del frontend}.
+
+% Diagrama de Gantt Desarrollo del frontend
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.29cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2025-03-24}{2025-04-25}
+			\gantttitlecalendar*{2025-03-24}{2025-04-25}{year} \\
+			\gantttitlecalendar*{2025-03-24}{2025-04-25}{month} \\
+			%\gantttitlecalendar*{2025-03-24}{2025-04-25}{day} \\
+			\ganttbar{6.1 Configuración inicial}{2025-03-24}{2025-03-26} \\
+			\ganttbar{6.2 Implementación TLS}{2025-03-26}{2025-03-28} \\
+			\ganttbar{6.3 Configuración JWT}{2025-03-31}{2025-04-02} \\
+			\ganttbar{6.4 Configuración WebSockets}{2025-04-03}{2025-04-04} \\
+			\ganttbar{6.5 y 6.6 Login de usuario}{2025-04-04}{2025-04-07} \\
+			\ganttbar{6.7 y 6.8 Vistas de  usuarios}{2025-04-07}{2025-04-08} \\
+			\ganttbar{6.9 y 6.10 Vistas de ambientes}{2025-04-08}{2025-04-09} \\
+			\ganttbar{6.11 y 6.12 Vistas de sensores}{2025-04-09}{2025-04-10} \\
+			\ganttbar{6.13 y 6.14 Vistas de actuadores}{2025-04-10}{2025-04-11} \\
+			\ganttbar{6.15 y 6.16 Vista de mediciones}{2025-04-14}{2025-04-16} \\
+			\ganttbar{6.17 y 6.18 Vista de estados}{2025-04-16}{2025-04-18} \\
+			\ganttbar{6.19 y 6.20 Vista parámetro sensor}{2025-04-21}{2025-04-21} \\
+			\ganttbar{6.21 y 6.22 Vista parámetro actuador}{2025-04-22}{2025-04-22} \\
+			\ganttbar{6.23 y 6.24 Vista principal}{2025-04-23}{2025-04-25} \\
+		\end{ganttchart}
+	\caption{Desarrollo del Frontend.}
+	\label{fig:gantt6}
+\end{figure}
+
+En la figura \ref{fig:gantt7}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 7: Pruebas y validación}.
+
+% Diagrama de Gantt Pruebas y validación
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.5cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2025-04-28}{2025-05-16}
+			\gantttitlecalendar*{2025-04-28}{2025-05-16}{year} \\
+			\gantttitlecalendar*{2025-04-28}{2025-05-16}{month} \\
+			%\gantttitlecalendar*{2025-04-28}{2025-05-16}{day} \\
+			\ganttbar{7.1 Pruebas de los microcontroladores}{2025-04-28}{2025-05-02} \\
+			\ganttbar{7.2 Pruebas Backend}{2025-05-05}{2025-05-09} \\
+			\ganttbar{7.3 Pruebas Frontend}{2025-05-12}{2025-05-16} \\
+		\end{ganttchart}
+	\caption{Pruebas y validación.}
+	\label{fig:gantt7}
+\end{figure}
+
+En la figura \ref{fig:gantt8}, se puede visualizar el detalle de actividades referidas a la \textbf{tarea 8: Documentación del proyecto}.
+
+% Diagrama de Gantt Documentación del proyecto
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.36cm, % Aumenta el ancho de las barras
+				y unit title=0.7cm, % Aumenta la altura de los títulos
+				y unit chart=0.7cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2025-05-19}{2025-06-20}
+			\gantttitlecalendar*{2025-05-19}{2025-06-20}{year} \\
+			\gantttitlecalendar*{2025-05-19}{2025-06-20}{month} \\
+			%\gantttitlecalendar*{2025-05-19}{2025-06-20}{day} \\
+			\ganttbar{8.1 Informe de avance}{2025-05-19}{2025-05-21} \\
+			\ganttbar{8.2 Video del sistema}{2025-05-22}{2025-05-22} \\
+			\ganttbar{8.3 Estructura memoria}{2025-05-22}{2025-05-23} \\
+			\ganttbar{8.4 Escritura memoria}{2025-05-26}{2025-06-10} \\
+			\ganttbar{8.5 Revisión memoria}{2025-06-14}{2025-06-18} \\
+			\ganttbar{8.6 Presentación final}{2025-06-16}{2025-06-20} \\
+		\end{ganttchart}
+	\caption{Documentación del proyecto.}
+	\label{fig:gantt8}
+\end{figure}
+
+Por último, en la figura \ref{fig:ganttGral}, se puede visualizar el total de las actividades a ser desarrolladas en  el \textbf{proyecto}.
+
+% Diagrama de Gantt Documentación del proyecto
+\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.05cm, % Aumenta el ancho de las barras
+				y unit title=0.39cm, % Aumenta la altura de los títulos
+				y unit chart=0.39cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2024-08-20}{2025-06-20}
+			\gantttitlecalendar*{2024-08-20}{2025-06-20}{year} \\
+			\gantttitlecalendar*{2024-08-20}{2025-06-20}{month} \\
+			%\gantttitlecalendar*{2025-05-19}{2025-06-20}{day} \\
+			\ganttbar{1.1}{2024-08-20}{2024-09-17} \\
+			\ganttbar{1.2}{2024-09-09}{2024-09-18} \\
+
+			\ganttbar{2.1}{2024-09-30}{2024-10-04} \\
+			\ganttbar{2.2}{2024-10-07}{2024-10-09} \\
+			\ganttbar{2.3}{2024-10-09}{2024-10-10} \\
+			\ganttbar{2.4}{2024-10-11}{2024-10-15} \\
+			\ganttbar{2.5}{2024-10-15}{2024-10-17} \\
+			\ganttbar{2.6}{2024-10-18}{2024-10-24} \\
+			\ganttbar{2.7}{2024-10-18}{2024-10-24} \\
+			\ganttbar{2.8}{2024-10-21}{2024-10-24} \\
+			\ganttbar{2.9}{2024-10-24}{2024-10-25} \\
+
+			\ganttbar{3.1}{2024-10-28}{2024-11-10} \\
+			\ganttbar{3.2}{2024-11-04}{2024-11-15} \\
+
+			\ganttbar{4.1}{2024-11-18}{2024-11-18} \\
+			\ganttbar{4.2}{2024-11-18}{2024-11-25} \\
+			\ganttbar{4.3}{2024-11-25}{2024-12-04} \\
+			\ganttbar{4.4}{2024-12-05}{2024-12-10} \\
+			\ganttbar{4.5}{2024-12-11}{2024-12-20} \\
+			\ganttbar{4.6}{2025-01-20}{2025-01-27} \\
+			\ganttbar{4.7}{2025-01-28}{2025-02-06} \\
+			\ganttbar{4.8}{2025-02-07}{2025-02-14} \\
+
+			\ganttbar{5.1}{2025-02-17}{2025-02-18} \\
+			\ganttbar{5.2}{2025-02-18}{2025-02-20} \\
+			\ganttbar{5.3}{2025-02-21}{2025-02-25} \\
+			\ganttbar{5.4}{2025-02-25}{2025-02-27} \\
+			\ganttbar{5.5}{2025-02-27}{2025-03-03} \\
+			\ganttbar{5.6}{2025-03-04}{2025-03-06} \\
+			\ganttbar{5.7}{2025-03-07}{2025-03-10} \\
+			\ganttbar{5.9}{2025-03-10}{2025-03-11} \\
+			\ganttbar{5.11}{2025-03-11}{2025-03-13} \\
+			\ganttbar{5.13}{2025-03-13}{2025-03-14} \\
+			\ganttbar{5.15}{2025-03-17}{2025-03-18} \\
+			\ganttbar{5.17}{2025-03-18}{2025-03-19} \\
+			\ganttbar{5.19}{2025-03-19}{2025-03-20} \\
+			\ganttbar{5.21}{2025-03-20}{2025-03-21} \\
+
+			\ganttbar{6.1}{2025-03-24}{2025-03-26} \\
+			\ganttbar{6.2}{2025-03-26}{2025-03-28} \\
+			\ganttbar{6.3}{2025-03-31}{2025-04-02} \\
+			\ganttbar{6.4}{2025-04-03}{2025-04-04} \\
+			\ganttbar{6.5}{2025-04-04}{2025-04-07} \\
+			\ganttbar{6.7}{2025-04-07}{2025-04-08} \\
+			\ganttbar{6.9}{2025-04-08}{2025-04-09} \\
+			\ganttbar{6.11}{2025-04-09}{2025-04-10} \\
+			\ganttbar{6.13}{2025-04-10}{2025-04-11} \\
+			\ganttbar{6.15}{2025-04-14}{2025-04-16} \\
+			\ganttbar{6.17}{2025-04-16}{2025-04-18} \\
+			\ganttbar{6.19}{2025-04-21}{2025-04-21} \\
+			\ganttbar{6.21}{2025-04-22}{2025-04-22} \\
+			\ganttbar{6.23}{2025-04-23}{2025-04-25} \\
+
+			\ganttbar{7.1}{2025-04-28}{2025-05-02} \\
+			\ganttbar{7.2}{2025-05-05}{2025-05-09} \\
+			\ganttbar{7.3}{2025-05-12}{2025-05-16} \\
+
+			\ganttbar{8.1}{2025-05-19}{2025-05-21} \\
+			\ganttbar{8.2}{2025-05-22}{2025-05-22} \\
+			\ganttbar{8.3}{2025-05-22}{2025-05-23} \\
+			\ganttbar{8.4}{2025-05-26}{2025-06-10} \\
+			\ganttbar{8.5}{2025-06-14}{2025-06-18} \\
+			\ganttbar{8.6}{2025-06-16}{2025-06-20} \\
+		\end{ganttchart}
+	\caption{Diagrama de Gantt.}
+	\label{fig:ganttGral}
+\end{figure}
