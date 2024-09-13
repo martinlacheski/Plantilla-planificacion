@@ -1,71 +1,135 @@
-\begin{consigna}{red}
-	a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+\subsection{Definición de riesgos.}
 
-	Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes
-	previstos de forma negativa)
-	\begin{itemize}
-		\item Severidad (S): mientras más severo, más alto es el número (usar números del 1
-		      al 10).\\ Justificar el motivo por el cual se asigna determinado número de
-		      severidad (S).
-		\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número
-		      (usar del 1 al 10).\\ Justificar el motivo por el cual se asigna determinado
-		      número de (O).
-	\end{itemize}
+\textbf{Riesgo 1: Imposibilidad de cumplir con los plazos establecidos.}
+\begin{itemize}
+	\item Severidad (S): 9.\\ Un retraso en el cronograma afectaría la entrega final del
+	      proyecto y podría comprometer su éxito.
+	\item Ocurrencia (O): 5.\\ El responsable tiene múltiples compromisos laborales,
+	      académicos y familiares, lo que limita el tiempo disponible para dedicarse al
+	      proyecto de forma continua.
+\end{itemize}
 
-	Riesgo 2:
-	\begin{itemize}
-		\item Severidad (S): X.\\ Justificación...
-		\item Ocurrencia (O): Y.\\ Justificación...
-	\end{itemize}
+\textbf{Riesgo 2: Retraso en la disponibilidad de los componentes para
+	desarrollar el prototipo.}
+\begin{itemize}
+	\item Severidad (S): 7.\\ La falta de materiales en el tiempo establecido podría
+	      retrasar la construcción, programación y prueba del prototipo, lo que afectaría
+	      los plazos establecidos para completar el proyecto.
+	\item Ocurrencia (O): 5.\\ Existe una posibilidad moderada de que los proveedores no
+	      entreguen los materiales a tiempo, ya sea por demoras logísticas o problemas de
+	      stock, especialmente considerando la dependencia de insumos específicos para el
+	      prototipo.
+\end{itemize}
 
-	Riesgo 3:
-	\begin{itemize}
-		\item Severidad (S): X.\\ Justificación...
-		\item Ocurrencia (O): Y.\\ Justificación...
-	\end{itemize}
+\textbf{Riesgo 3: Selección inadecuada de actuadores, sensores y
+	microcontroladores.}
+\begin{itemize}
+	\item Severidad (S): 8.\\ La elección incorrecta de estos componentes puede generar
+	      fallos en el funcionamiento o necesidad de adquirir nuevos dispositivos, lo que
+	      causaría retrasos significativos en el desarrollo y pruebas del proyecto,
+	      además de incrementar los costos.
+	\item Ocurrencia (O): 4.\\ Dado que el proyecto implica el uso de nuevas tecnologías
+	      y el responsable no posee experiencia con algunos de estos componentes, existe
+	      un riesgo moderado de que la selección inicial no sea la más adecuada.
+\end{itemize}
 
-	b) Tabla de gestión de riesgos: (El RPN se calcula como RPN=SxO)
+\textbf{Riesgo 4: Falta de conocimientos adecuados para el desarrollo del
+	proyecto.}
+\begin{itemize}
+	\item Severidad (S): 7.\\ La falta de experiencia puede llevar a errores en el diseño
+	      y desarrollo, aumentando el tiempo necesario para completar el proyecto y
+	      potencialmente afectando la calidad y funcionalidad del sistema.
+	\item Ocurrencia (O): 6.\\ Aunque es posible adquirir los conocimientos necesarios
+	      mediante formación y consulta, existe una probabilidad moderada de enfrentar
+	      dificultades debido a la curva de aprendizaje y posibles dificultades técnicas.
+\end{itemize}
 
-	\begin{table}[htpb]
-		\centering
-		\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
-			\hline
-			\rowcolor[HTML]{C0C0C0}
-			Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-		\end{tabularx}%
-	\end{table}
+\textbf{Riesgo 5: Cambio de trabajo del responsable del proyecto.}
+\begin{itemize}
+	\item Severidad (S): 9.\\ La salida del único responsable del proyecto puede tener un
+	      impacto severo en el progreso, ya que detendría todo el desarrollo y requeriría
+	      la búsqueda de un reemplazo o una reestructuración completa del proyecto. Esto
+	      puede causar retrasos significativos y posibles problemas de continuidad.
+	\item Ocurrencia (O): 4.\\ Aunque el cambio de trabajo es una posibilidad real, la
+	      probabilidad de que ocurra durante el proyecto puede ser moderada.
+\end{itemize}
 
-	Criterio adoptado:
+\subsection{Tabla de gestión de riesgos.}
 
-	Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean
-	mayores a...
+El RPN se calcula como \textit{RPN = S x O}
 
-	Nota: los valores marcados con (*) en la tabla corresponden luego de haber
-	aplicado la mitigación.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Riesgo                                               & S & O & RPN & S* & O* & RPN* \\ \hline
+		Imposibilidad de cumplir con los plazos establecidos & 9 & 5 & 45  & 9  & 4  & 36   \\ \hline
+		Retraso en la disponibilidad de los componentes para
+		desarrollar el prototipo                             & 7 & 5 & 35  & -  & -  & -    \\ \hline
+		Selección inadecuada de actuadores, sensores y
+		microcontroladores                                   & 8 & 4 & 32  & -  & -  & -    \\ \hline
+		Falta de conocimientos adecuados para el desarrollo del
+		proyecto                                             & 7 & 6 & 42  & 7  & 5  & 35   \\ \hline
+		Cambio de trabajo del responsable del proyecto       & 9 & 4 & 36  & -  & -  & -    \\ \hline
+	\end{tabularx}%
+\end{table}
 
-	c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo
-	establecido:
+\textbf{Criterio adoptado:}
 
-	Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
-	mitigación). Nueva asignación de S y O, con su respectiva justificación:
-	\begin{itemize}
-		\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1
-		      al 10). Justificar el motivo por el cual se asigna determinado número de
-		      severidad (S).
-		\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número
-		      (usar del 1 al 10). Justificar el motivo por el cual se asigna determinado
-		      número de (O).
-	\end{itemize}
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean
+mayores a 40.
 
-	Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
-	mitigación).
+Nota: los valores marcados con (*) en la tabla corresponden luego de haber
+aplicado la mitigación.
 
-	Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
-	mitigación).
+\subsection{Plan de mitigación de los riesgos que originalmente excedían el RPN máximo
+	establecido.}
 
-\end{consigna}
+\textbf{Riesgo 1: Imposibilidad de cumplir con los plazos establecidos.}
+\begin{itemize}
+	\item Planes de mitigación:\\
+	      \begin{itemize}
+		      \item Establecer hitos intermedios:\\ Dividir el proyecto en fases más pequeñas con
+		            fechas límite claras. Esto permitirá monitorear el progreso de manera más
+		            efectiva y detectar posibles retrasos a tiempo.
+		      \item Implementar un sistema de seguimiento y control:\\ Utilizar herramientas de
+		            gestión de proyectos para monitorear el avance del proyecto en tiempo real y
+		            detectar desviaciones del plan.
+	      \end{itemize}
+	\item Severidad (S*):9.\\ Aunque un retraso en el cronograma seguiría afectando
+	      significativamente la entrega final del proyecto y comprometiendo su éxito, La
+	      severidad se redujo debido a la implementación de hitos intermedios y un
+	      sistema de seguimiento, lo que permite detectar y corregir desviaciones a
+	      tiempo.
+	\item Probabilidad de ocurrencia (O*):4.\\ Aunque sigue siendo moderada, debido a que
+	      el responsable del proyecto sigue teniendo múltiples compromisos, la
+	      probabilidad se ajusta para reflejar una disminución considerable en el riesgo,
+	      gracias a las medidas proactivas.
+\end{itemize}
+
+\pagebreak
+
+\textbf{Riesgo 4: Falta de conocimientos adecuados para el desarrollo del
+	proyecto.}
+\begin{itemize}
+	\item Planes de mitigación:\\
+	      \begin{itemize}
+		      \item Formación continua y capacitación:\\ Realizar cursos especializados en las
+		            áreas clave del proyecto, como desarrollo de sistemas embebidos, backend y
+		            frontend para asegurar un conocimiento profundo y estructurado.
+		      \item Asesoramiento y mentoría:\\ Contactar a expertos o mentores en el campo para
+		            recibir orientación y consejos técnicos. Unirse a comunidades o foros
+		            especializados para intercambiar experiencias y obtener ayuda con problemas
+		            específicos.
+	      \end{itemize}
+	\item Severidad (S*):7.\\ Con un plan de mitigación robusto y estrategias de
+	      formación y asesoramiento, el impacto potencial de la falta de conocimientos se
+	      reduce. Aunque los errores pueden ocurrir, la calidad y la funcionalidad del
+	      sistema se verán menos afectadas debido a las medidas preventivas.
+	\item Probabilidad de ocurrencia (O*):5.\\ La probabilidad de enfrentar dificultades
+	      debido a la curva de aprendizaje se reduce con la formación continua y la
+	      asesoría. Sin embargo, la curva de aprendizaje y los problemas técnicos pueden
+	      aún presentar desafíos, pero la probabilidad de que estos problemas afecten
+	      significativamente el proyecto disminuye con un enfoque proactivo.
+\end{itemize}
