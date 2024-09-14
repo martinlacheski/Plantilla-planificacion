@@ -1,15 +1,143 @@
+Listado de requerimiento críticos con sus acciones de verificación y
+validación:
 
-	Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+\begin{itemize}
+	\item Requerimientos asociados a los sensores y actuadores:
+	      \begin{itemize}
+		      \item Req \#1:\\ 1.2. Cada nodo deberá implementar certificados TLS.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas para asegurar que la comunicación entre los
+			                  nodos y el servidor es encriptada y segura.
+			            \item Validación: Se comprobará que todas las conexiones con el microcontrolador
+			                  utilicen certificados TLS.
+		            \end{itemize}
+		      \item Req \#2: \\ 1.5: Cada nodo deberá permitir configurar de manera remota el
+		            tiempo para enviar los datos recolectados.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas funcionales de la interfaz de configuración
+			                  para ajustar el tiempo de envío de datos.
+			            \item Validación: Se comprobará que se realizan las lecturas de los nodos en el
+			                  tiempo solicitado.
+		            \end{itemize}
+		      \item Req \#3: \\ 1.6: Cada nodo deberá enviar al servidor IoT los datos
+		            recolectados.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas unitarias para verificar que los datos
+			                  enviados por cada sensor son correctos y completos.
+			            \item Validación: se realizarán mediciones de la magnitud correspondiente y se
+			                  verificarán los datos obtenidos.
+		            \end{itemize}
+		      \item Req \#4: \\ 2.6: Cada nodo actuador deberá permitir configurar de manera remota
+		            los parámetros del actuador y cada canal.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas funcionales de la interfaz de configuración
+			                  de los actuadores y sus canales.
+			            \item Validación: Se comprobará que se activen y controlan los canales del actuador y
+			                  se verificará su funcionamiento.
+		            \end{itemize}
+	      \end{itemize}
 
-	\begin{itemize}
-		\item Req \#1: copiar acá el requerimiento con su correspondiente número.
+	\item Requerimientos asociados al Frontend:
+	      \begin{itemize}
+		      \item Req \#5:\\ 4.1: La interfaz deberá ser intuitiva y accesible desde dispositivos
+		            móviles y de escritorio.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas de usabilidad y compatibilidad en
+			                  diferentes dispositivos (móviles, tablets, portátiles y computadoras de
+			                  escritorio) para asegurar que la aplicación se visualice correctamente, se
+			                  verificará la responsividad y el funcionamiento adecuado de cada componente.
+			            \item Validación: Se comprobará que todas las secciones de la aplicación son fáciles
+			                  de usar y se visualizan correctamente en diversos dispositivos, para confirmar
+			                  que la experiencia de usuario sea la adecuada.
+		            \end{itemize}
+		      \item Req \#6: \\ 4.6: Deberá permitir visualizar en tiempo real los datos recibidos
+		            de los sensores y actuadores.
+		            \begin{itemize}
+			            \item Verificación: Se llevarán a cabo pruebas de funcionalidad para asegurar que la
+			                  interfaz muestra los datos en tiempo real de manera precisa y continua.
+			            \item Validación: Se solicitará feedback a los usuarios finales para verificar que la
+			                  visualización de los datos en tiempo real es clara y concisa.
+		            \end{itemize}
+		      \item Req \#7: \\ 4.7: Deberá permitir enviar comandos y configuraciones a los
+		            sensores y actuadores.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas funcionales de envío de comandos desde la
+			                  interfaz y confirmación de la ejecución correcta.
+			            \item Validación: Se realizarán pruebas de campo para confirmar que los comandos se
+			                  ejecutan de manera correcta.
+		            \end{itemize}
+		      \item Req \#8: \\ 4.8: Deberá permitir la visualización de los datos históricos de
+		            los sensores y actuadores.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas para asegurar que la interfaz muestre
+			                  correctamente los datos históricos de sensores y actuadores, comprobar que los
+			                  filtros de búsqueda, la navegación entre fechas y la presentación de los datos
+			                  funcionen adecuadamente.
+			            \item Validación: Se solicitará al cliente y usuarios finales que revisen la interfaz
+			                  y proporcionen retroalimentación sobre la utilidad, accesibilidad y claridad de
+			                  la visualización de los datos históricos.
+		            \end{itemize}
+		      \item Req \#9: \\ 4.9: Deberá permitir la visualización en tiempo real y el control
+		            de los sensores y actuadores a través de un tablero interactivo.
+		            \begin{itemize}
+			            \item Verificación: Se desarrollarán diferentes tipos de visualizaciones (como
+			                  gráficos, tablas, etc.) en el tablero interactivo para asegurar que
+			                  proporcionen información clara y efectiva. Se evaluará si permiten una
+			                  visualización y control eficiente de los sensores y actuadores.
+			            \item Validación: Se recogerá retroalimentación de clientes y usuarios finales para
+			                  confirmar que el tablero interactivo es funcional, intuitivo y proporciona una
+			                  visión general clara del sistema.
+		            \end{itemize}
+	      \end{itemize}
 
-		      \begin{itemize}
-			      \item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el
-			            sistema al cliente. Detallar.
-			      \item Validación con el cliente para confirmar que está de acuerdo en que se cumplió
-			            con lo requerido. Detallar.
-		      \end{itemize}
+	\item Requerimientos asociados al Backend y la API:
+	      \begin{itemize}
+		      \item Req \#10:\\ 5.1: Deberá permitir conexiones seguras mediante TLS.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas de seguridad y revisión de las bibliotecas
+			                  utilizadas para asegurar que la comunicación es encriptada y segura.
+			            \item Validación: Se comprobará que todas las conexiones utilicen TLS a través de la
+			                  ejecución de requests a todos los endpoints disponibles.
+		            \end{itemize}
+		      \item Req \#11: \\ 5.2: Deberá poder implementar JWT (JSON Web Token) para poder
+		            propagar entre dos partes, y de forma segura, la identidad de un determinado
+		            usuario.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas de integración para confirmar que el
+			                  sistema puede generar y validar tokens JWT correctamente. Se verificarán
+			                  aspectos como la encriptación del token, su expiración, y la transmisión de la
+			                  identidad del usuario entre el cliente y el servidor. También se revisará que
+			                  el proceso de autenticación y autorización basado en JWT funciona según lo
+			                  especificado.
+			            \item Validación: Se comprobará que el sistema proporciona una autenticación segura y
+			                  que el manejo de los tokens JWT cumple con los requisitos de seguridad y
+			                  funcionalidad esperados.
+		            \end{itemize}
+		      \item Req \#12: \\ 5.3: Deberá soportar los métodos HTTP para realizar operaciones
+		            CRUD y visualizar los reportes, WebSockets para la visualización en tiempo real
+		            de los datos y MQTT para la interacción con los sensores y actuadores.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas de funcionalidad para asegurar que los
+			                  métodos HTTP (GET, POST, PUT, DELETE) funcionan correctamente para las
+			                  operaciones CRUD y la generación de reportes. Se comprobará la implementación
+			                  de WebSockets para asegurar que la visualización en tiempo real de los datos es
+			                  precisa. Además, se evaluará la comunicación MQTT para verificar que los
+			                  mensajes se envían y reciben adecuadamente entre el servidor y los
+			                  sensores/actuadores.
+			            \item Validación: Se comprobará que los métodos HTTP, WebSockets y MQTT cumplen con
+			                  las expectativas en términos de desempeño y funcionalidad.
+		            \end{itemize}
+		      \item Req \#13: \\ 5.8: Deberá poder persistir la información histórica de las
+		            mediciones de los sensores.
+		            \begin{itemize}
+			            \item Verificación: Se realizarán pruebas de almacenamiento y recuperación de datos
+			                  para verificar que la información histórica de las mediciones de los sensores
+			                  se guarda correctamente en la base de datos.
+			            \item Validación: se comprobará la persistencia de la información histórica es
+			                  adecuada y accesible para consultas futuras.
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
 
-	\end{itemize}
+\pagebreak
 

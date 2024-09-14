@@ -5,10 +5,12 @@
 		      \item Cada nodo deberá implementar certificados TLS.
 		      \item Cada nodo deberá conectarse a una red Wi-Fi.
 		      \item Cada nodo deberá tener un identificador único dentro del sistema.
-		      \item Cada nodo deberá permitir configurar de manera remota el tiempo para enviar los datos recolectados.
+		      \item Cada nodo deberá permitir configurar de manera remota el tiempo para enviar los
+		            datos recolectados.
 		      \item Cada nodo, según corresponda, deberá enviar al servidor IoT:
 		            \begin{enumerate}
-			            \item la temperatura del ambiente, humedad relativa, presión atmosférica y nivel de luminosidad,
+			            \item la temperatura del ambiente, humedad relativa, presión atmosférica y nivel de
+			                  luminosidad,
 			            \item el nivel de dióxido de carbono,
 			            \item el nivel de pH, CE y TDS,
 			            \item el nivel y temperatura de la solución nutritiva,
@@ -23,7 +25,8 @@
 		      \item Cada nodo deberá conectarse a una red Wi-Fi.
 		      \item Cada nodo deberá tener un identificador único dentro del sistema.
 		      \item Cada nodo deberá contar con cuatro canales.
-		      \item Cada nodo deberá permitir configurar de manera remota los parámetros del actuador y cada canal.
+		      \item Cada nodo deberá permitir configurar de manera remota los parámetros del
+		            actuador y cada canal.
 		      \item Cada nodo deberá enviar al servidor IoT el estado de cada canal.
 		      \item Cada nodo deberá permitir activar de manera remota cada canal.
 	      \end{enumerate}
@@ -33,57 +36,77 @@
 		      \item Deberá contar con un broker MQTT que soporte conexiones seguras mediante TLS.
 		      \item Deberá gestionar las suscripciones y publicaciones de los datos enviados desde
 		            los nodos y permitir la comunicación bidireccional para el envío de comandos.
-		      \item Deberá implementar QoS (\textit{Quality of Service}) para garantizar la entrega de los mensajes.
+		      \item Deberá implementar QoS (\textit{Quality of Service}) para garantizar la entrega
+		            de los mensajes.
 	      \end{enumerate}
 
 	\item Requerimientos asociados al Frontend:
 	      \begin{enumerate}
-		      \item La interfaz deberá ser intuitiva y accesible desde dispositivos móviles y de escritorio.
+		      \item La interfaz deberá ser intuitiva y accesible desde dispositivos móviles y de
+		            escritorio.
 		      \item Deberá permitir el acceso al sistema a usuarios debidamente autenticados.
-		      \item Deberá permitir realizar el CRUD (\textit{Create, Read, Update and Delete}) de ambientes.
-		      \item Deberá permitir realizar el CRUD de sensores asociados a un determinado ambiente.
-		      \item Deberá permitir realizar el CRUD de actuadores asociados a un determinado ambiente.
-		      \item Deberá permitir visualizar en tiempo real los datos recibidos de los sensores y actuadores.
+		      \item Deberá permitir realizar el CRUD (\textit{Create, Read, Update and Delete}) de
+		            ambientes.
+		      \item Deberá permitir realizar el CRUD de sensores asociados a un determinado
+		            ambiente.
+		      \item Deberá permitir realizar el CRUD de actuadores asociados a un determinado
+		            ambiente.
+		      \item Deberá permitir visualizar en tiempo real los datos recibidos de los sensores y
+		            actuadores.
 		      \item Deberá permitir enviar comandos y configuraciones a los sensores y actuadores.
 		      \item Deberá permitir visualizar los datos históricos de los sensores y actuadores.
-		      \item Deberá permitir visualizar, en tiempo real, un tablero con los datos de los sensores y actuadores.
+		      \item Deberá permitir la visualización en tiempo real y el control de los sensores y
+		            actuadores a través de un tablero interactivo.
 	      \end{enumerate}
 
 	\item Requerimientos asociados al Backend y la API:
 	      \begin{enumerate}
 		      \item Deberá permitir conexiones seguras mediante TLS.
-		      \item Deberá poder implementar JWT (\textit{JSON Web Token}) para poder propagar entre dos partes, y de forma segura, la identidad de un 
-			  determinado usuario.
-		      \item Deberá soportar los métodos HTTP para realizar operaciones CRUD y visualizar los reportes, WebSockets
-		            para la visualización en tiempo real de los datos y MQTT para la interacción con los sensores y actuadores.
-			  \item Deberá poder persistir la información de los usuarios.
-			  \item Deberá poder persistir la información de los ambientes.
-			  \item Deberá poder persistir la información de los sensores.
-			  \item Deberá poder persistir la información de los actuadores.
-			  \item Deberá poder persistir la información histórica de las mediciones de los sensores.
-			  \item Deberá poder persistir la información histórica de los estados de los actuadores.
-			  \item Deberá poder persistir la información histórica de los parámetros enviados a los sensores.
-			  \item Deberá poder persistir la información histórica de los parámetros enviados a los actuadores.
-		      \item Deberá permitir la autenticación y autorización de usuarios autorizados para acceder a los recursos.
-		      \item Deberá incluir los endpoints para permitir realizar el CRUD de usuarios para el acceso seguro al sistema.
+		      \item Deberá poder implementar JWT (\textit{JSON Web Token}) para poder propagar
+		            entre dos partes, y de forma segura, la identidad de un determinado usuario.
+		      \item Deberá soportar los métodos HTTP para realizar operaciones CRUD y visualizar
+		            los reportes, WebSockets para la visualización en tiempo real de los datos y
+		            MQTT para la interacción con los sensores y actuadores.
+		      \item Deberá poder persistir la información de los usuarios.
+		      \item Deberá poder persistir la información de los ambientes.
+		      \item Deberá poder persistir la información de los sensores.
+		      \item Deberá poder persistir la información de los actuadores.
+		      \item Deberá poder persistir la información histórica de las mediciones de los
+		            sensores.
+		      \item Deberá poder persistir la información histórica de los estados de los
+		            actuadores.
+		      \item Deberá poder persistir la información histórica de los parámetros enviados a
+		            los sensores.
+		      \item Deberá poder persistir la información histórica de los parámetros enviados a
+		            los actuadores.
+		      \item Deberá permitir la autenticación y autorización de usuarios autorizados para
+		            acceder a los recursos.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de usuarios para el
+		            acceso seguro al sistema.
 		      \item Deberá incluir los endpoints para permitir realizar el CRUD de ambientes.
-		      \item Deberá incluir los endpoints para permitir realizar el CRUD de sensores asociados a un determinado ambiente, 
-			  con la configuración de los parámetros específicos.
-		      \item Deberá incluir los endpoints para permitir realizar el CRUD de actuadores asociados a un determinado ambiente, 
-			  con la configuración de los parámetros específicos por canal.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de sensores
+		            asociados a un determinado ambiente, con la configuración de los parámetros
+		            específicos.
+		      \item Deberá incluir los endpoints para permitir realizar el CRUD de actuadores
+		            asociados a un determinado ambiente, con la configuración de los parámetros
+		            específicos por canal.
 		      \item Deberá incluir el endpoint para registrar las mediciones de los sensores.
 		      \item Deberá incluir el endpoint para registrar los estados de los actuadores.
-		      \item Deberá incluir el endpoint para obtener el histórico de las mediciones de los sensores.
-		      \item Deberá incluir el endpoint para obtener el histórico de los estados de los actuadores.
+		      \item Deberá incluir el endpoint para obtener el histórico de las mediciones de los
+		            sensores.
+		      \item Deberá incluir el endpoint para obtener el histórico de los estados de los
+		            actuadores.
 		      \item Deberá incluir un endpoint para el envío de parámetros a los sensores.
 		      \item Deberá incluir un endpoint para el envío de parámetros a los actuadores.
 	      \end{enumerate}
 
 	\item Requerimientos de documentación:
 	      \begin{enumerate}
-		      \item Se entregará el código del sistema, que incluye todos los componentes desarrollados (sensores, actuadores, broker MQTT, Frontend, Backend y API).
+		      \item Se entregará el código del sistema, que incluye todos los componentes
+		            desarrollados (sensores, actuadores, broker MQTT, Frontend, Backend y API).
 		      \item Se entregarán las guías y diagramas de instalación, configuración y operación.
 		      \item Se desarrollará un informe de avance al finalizar el Taller de Trabajo Final A.
-		      \item Se desarrollará la memoria del proyecto al finalizar el Taller de Trabajo Final B.
+		      \item Se desarrollará la memoria del proyecto al finalizar el Taller de Trabajo Final
+		            B.
 	      \end{enumerate}
 \end{enumerate}
