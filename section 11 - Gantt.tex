@@ -1,6 +1,6 @@
 \textbf{Resumen}
 
-En la tabla \ref{tab:tabGantt}, se puede visualizar un detalle de la cantidad
+En la tabla \ref{tab:tabGantt}, se puede visualizar el detalle de la cantidad
 de horas, la fecha de inicio y fin de cada grupo de tareas estimadas al
 desarrollo del proyecto.
 
@@ -57,8 +57,49 @@ consideraciones:
 \textbf{Diagramas}
 
 Para visualizar el diagrama de Gantt de manera correcta, se procede a generar
-una figura correspondiente a cada tarea. Al finalizar, se verá el diagrama
+una figura resumen y figuras correspondiente a cada tarea. Al finalizar, se verá el diagrama
 completo de todas las actividades a ser desarrolladas en el proyecto.
+
+En la figura \ref{fig:ganttGralRes}, se puede visualizar el resumen de  de cada grupo de tareas estimadas al
+desarrollo del proyecto.
+
+% Diagrama de Gantt General del proyecto
+\begin{landscape}
+
+	\begin{figure}[H]
+		\begin{ganttchart}[
+				time slot unit=day,
+				time slot format=isodate,
+				x unit=0.07cm, % Aumenta el ancho de las barras
+				y unit title=0.6cm, % Aumenta la altura de los títulos
+				y unit chart=0.6cm, % Aumenta la altura de las filas del gráfico
+				milestone/.append style={xscale=4},
+				vgrid,
+				hgrid,
+			]{2024-08-20}{2025-06-20}
+			\gantttitlecalendar*{2024-08-20}{2025-06-20}{year} \\
+			\gantttitlecalendar*{2024-08-20}{2025-06-20}{month} \\
+			%\gantttitlecalendar*{2025-05-19}{2025-06-20}{day} \\
+			\ganttbar{1. Planificación}{2024-08-20}{2024-09-18} \\
+			\ganttbar{2. Investigación}{2024-09-30}{2024-10-25} \\
+			\ganttbar{3. Prototipado}{2024-10-28}{2024-11-15} \\
+			\ganttbar{4.1 Des. firmware}{2024-11-18}{2024-12-20} \\
+			\ganttbar[bar/.append style={fill=gray}]{OFF (Vacaciones)}{2024-12-21}{2025-01-19} \\
+			\ganttbar{4.2 Des. firmware}{2025-01-20}{2025-02-14} \\
+			\ganttbar{5. Des. backend}{2025-02-17}{2025-03-21} \\
+			\ganttbar{6. des. frontend}{2025-03-24}{2025-04-25} \\
+			\ganttbar{7. Pruebas}{2025-04-28}{2025-05-18} \\
+
+			\ganttbar{8.1 Documentación}{2025-05-19}{2025-06-10} \\
+			\ganttbar[bar/.append style={fill=gray}]{**Revisión Jurado}{2025-06-10}{2025-06-14} \\
+			\ganttbar{8.2 Documentación}{2025-06-15}{2025-06-20} \\
+		\end{ganttchart}
+		\caption{Diagrama de Gantt.}
+		\label{fig:ganttGralRes}
+	\end{figure}
+\end{landscape}
+
+
 
 En la figura \ref{fig:gantt1}, se puede visualizar el detalle de actividades
 referidas a la \textbf{tarea 1: Planificación del proyecto}.
